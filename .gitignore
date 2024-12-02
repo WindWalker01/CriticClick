@@ -2,7 +2,6 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-.idea/
 src/main/resources/keys/*
 
 ### IntelliJ IDEA ###
@@ -10,6 +9,7 @@ src/main/resources/keys/*
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/discord.xml
 *.iws
 *.iml
 *.ipr
