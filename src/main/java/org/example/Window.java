@@ -37,7 +37,6 @@ public class Window extends JFrame {
                 set.getValue().setVisible(true);
             }else{
                 set.getValue().setVisible(false);
-
             }
        }
     }
