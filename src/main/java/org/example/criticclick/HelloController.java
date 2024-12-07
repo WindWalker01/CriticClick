@@ -1,4 +1,4 @@
-package org.example.crticclick;
+package org.example.criticclick;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

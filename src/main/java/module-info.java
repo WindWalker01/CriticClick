@@ -1,10 +1,11 @@
-module org.example.crticclick {
+module org.example.criticclick {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
     requires java.net.http;
+    requires com.fasterxml.jackson.databind;
 
-    opens org.example.crticclick to javafx.fxml;
-    exports org.example.crticclick;
+    opens org.example.criticclick to javafx.fxml;
+    exports org.example.criticclick;
 }
