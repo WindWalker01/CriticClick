@@ -23,10 +23,19 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
 
         MovieRequest request = new MovieRequest();
-        ArrayList<Movie> movies = request.getFilmRecommendation();
+        ArrayList<Movie> movies = request.getPopularReviews();
         for (int i = 0; i < movies.size(); i++) {
-            System.out.println(movies.get(i).id);
+            System.out.println("ID: "+movies.get(i).id);
+            System.out.println("Title: "+movies.get(i).title);
+            System.out.println("Overview: "+movies.get(i).overview);
+            System.out.println("Rating: "+movies.get(i).rating);
+            System.out.println("Poster: "+movies.get(i).posterPath);
+            System.out.println("Backdrop: "+movies.get(i).backdropPath);
+            System.out.println("Year: "+movies.get(i).year);
+            System.out.println("------------------");
         }
+
+        System.out.println("\n\n"+movies.size());
 
 
         launch();

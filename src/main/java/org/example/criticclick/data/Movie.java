@@ -6,7 +6,7 @@ public class Movie {
     public String title;
     public String overview;
     public float  rating;
-    public float posterPath;
+    public String  posterPath;
     public String backdropPath;
     public String year;
 
