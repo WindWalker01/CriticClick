@@ -3,10 +3,14 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.criticclick.SceneController">
    <children>
-      <Label layoutX="286.0" layoutY="191.0" text="Create" />
-      <MFXButton layoutX="276.0" layoutY="227.0" />
+      <Label alignment="CENTER" layoutX="209.0" layoutY="162.0" prefWidth="181.0" text="Create">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <MFXButton fx:id="Login" layoutX="276.0" layoutY="227.0" onAction="#onChangeSceneHome" />
    </children>
 </AnchorPane>
