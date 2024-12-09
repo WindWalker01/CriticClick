@@ -1,4 +1,4 @@
-package org.example.criticclick.data;
+package org.example.criticclick.model;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;

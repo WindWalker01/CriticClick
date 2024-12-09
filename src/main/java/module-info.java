@@ -8,4 +8,6 @@ module org.example.criticclick {
 
     opens org.example.criticclick to javafx.fxml;
     exports org.example.criticclick;
+    exports org.example.criticclick.controller;
+    opens org.example.criticclick.controller to javafx.fxml;
 }
