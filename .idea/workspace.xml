@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35e9726d-016c-476e-8d73-70d9284a8ef8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/criticclick/MovieCardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/criticclick/MovieCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/criticclick/CreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/criticclick/CreateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/criticclick/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/criticclick/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/criticclick/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/criticclick/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CRITIC_CLICK_logo-removebg-preview 1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CRITIC_CLICK_logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/criticclick/Create.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/criticclick/Create.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/criticclick/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/criticclick/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/criticclick/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/criticclick/Main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +23,25 @@
         <option value="JavaFXApplication" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "EunilCarl"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:WindWalker01/CriticClick.git",
+    "accountId": "2820a503-adc0-48d6-966c-3d1183234f4c"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -57,6 +68,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/FILES/IntelliJ (JAVA)/dikonakayamaam/CriticClick/src/main/resources/org/example/criticclick/Home.fxml",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,8 +110,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -119,6 +132,7 @@
       <workItem from="1733814498815" duration="4139000" />
       <workItem from="1733824213961" duration="587000" />
       <workItem from="1733829388720" duration="7839000" />
+      <workItem from="1733845377781" duration="4896000" />
     </task>
     <servers />
   </component>
