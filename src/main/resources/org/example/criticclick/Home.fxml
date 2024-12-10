@@ -1,18 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.criticclick.SceneController">
-   <children>
-      <Label contentDisplay="CENTER" layoutX="249.0" layoutY="172.0" text="Home">
-         <font>
-            <Font size="38.0" />
-         </font>
-      </Label>
-      <MFXButton layoutX="273.0" layoutY="235.0" onAction="#onChangeSceneCreate" />
-   </children>
-</AnchorPane>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <VBox prefHeight="1440.0" prefWidth="1280.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="1280.0" style="-fx-background-color: #908181;">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="27.0" right="41.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../../small-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="CriticClick">
+                     <font>
+                        <Font name="Arial Bold" size="32.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="916.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../small-Avatar.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="BROWSE BY">
+                     <HBox.margin>
+                        <Insets left="131.0" right="8.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font></Label>
+                  <MFXComboBox floatMode="DISABLED" prefWidth="284.0" promptText="Select a genre" text="Select a genre">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="169.0" />
+                     </HBox.margin>
+                  </MFXComboBox>
+                  <Label layoutX="141.0" layoutY="50.0" text="FIND A FILM">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="13.0" />
+                     </HBox.margin>
+                  </Label>
+                  <MFXTextField alignment="TOP_LEFT" prefHeight="48.0" prefWidth="328.0" promptText="Search">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
