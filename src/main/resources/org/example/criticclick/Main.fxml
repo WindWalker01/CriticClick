@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.criticclick.MainController">
    <children>
       <ImageView fitHeight="323.0" fitWidth="694.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -32,8 +31,8 @@
       </Label>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
          <children>
-            <MFXButton prefHeight="48.0" prefWidth="240.0" text="Create" />
-            <MFXButton layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="240.0" text="Login" />
+            <MFXButton onAction="#onChangeSceneCreate" prefHeight="48.0" prefWidth="240.0" text="Create" />
+            <MFXButton layoutX="10.0" layoutY="10.0" onAction="#onChangeSceneLogin" prefHeight="48.0" prefWidth="240.0" text="Login" />
          </children>
          <VBox.margin>
             <Insets top="1.0" />
