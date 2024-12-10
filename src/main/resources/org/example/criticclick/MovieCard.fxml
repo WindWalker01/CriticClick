@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.mfxcore.controls.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="287.0" prefWidth="154.0" style="-fx-border-color: black; -fx-border-width: thick; -fx-background-color: #E5E1DA;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.criticclick.MovieCardController">
+   <children>
+      <ImageView fx:id="poster" fitHeight="224.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets bottom="9.0" />
+         </VBox.margin>
+      </ImageView>
+      <Label fx:id="title" text="Title">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="year" text="year" />
+   </children>
+</VBox>
