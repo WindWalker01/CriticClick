@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/components/primitives/WebImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/CriticPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Home.java" afterDir="false" />
     </list>
@@ -112,7 +114,8 @@
       <updated>1733909668062</updated>
       <workItem from="1733909669410" duration="1474000" />
       <workItem from="1733916484522" duration="2832000" />
-      <workItem from="1733921705299" duration="4244000" />
+      <workItem from="1733921705299" duration="7151000" />
+      <workItem from="1733929184492" duration="985000" />
     </task>
     <servers />
   </component>

@@ -2,31 +2,25 @@ package org.example.pages;
 
 import org.example.CriticWindow;
 import org.example.Page;
-import org.example.components.TitleBar;
-import org.example.components.TitleCard;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Home extends CriticPage {
+public class Create extends CriticPage {
 
-    public Home(CriticWindow window) {
-        add(new TitleBar());
+    public Create(CriticWindow window) {
+        setBackground(new Color(0x6495ED));
 
 
         // TODO: remove this shit later this is for debugging purposes only
-        TitleCard titleCard = new TitleCard();
-        titleCard.setLocation(titleCard.getWidth(), 320);
-
-        add(titleCard);
-
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                window.changePage(Page.Create);
+                window.changePage(Page.Home);
             }
         });
 
     }
-
 }

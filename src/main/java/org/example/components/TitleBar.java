@@ -17,7 +17,7 @@ public class TitleBar extends JPanel {
         setSize(new Dimension(1280, 64));
 
         logo = new JLabel(new ImageIcon("src/main/resources/small-icon.png"));
-        title = new JLabel("Critic Click");
+        title = new JLabel("CriticClick");
         user = new JLabel(new ImageIcon("src/main/resources/small-Avatar.png"));
 
         logo.setBounds(new Rectangle(26, 0, 64, 64));
