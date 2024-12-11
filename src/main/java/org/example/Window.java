@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.components.TitleCard;
 import org.example.dsa.HashMapngGroup1;
+import org.example.pages.Home;
 
 import javax.swing.*;
 
@@ -20,21 +20,25 @@ public class Window extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setTitle("CriticClick");
+        setResizable(false);
 
-//        addPage(Page.Home, new TitleCard());
+        addPage(Page.Home, new Home());
+
+        changePage(currentPage);
     }
 
 
     public void addPage(Page type, JPanel panel){
-        pages.set(type, panel);
+        panel.setVisible(false);
         add(panel);
+        pages.set(type, panel);
     }
 
 
 
-    public void changePage(){
+    public void changePage(Page desiredPage){
         for (HashMapngGroup1.Node<Page, JPanel> set : pages.entrySet()){
-            if(set.key == currentPage){
+            if(set.key == desiredPage){
                 set.value.setVisible(true);
             }else{
                 set.value.setVisible(false);

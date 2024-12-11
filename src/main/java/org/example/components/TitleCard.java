@@ -1,15 +1,17 @@
 package org.example.components;
 
+import org.example.components.primitives.WebImage;
+
 import javax.swing.*;
 
 public class TitleCard extends JPanel {
 
-    public String poster;
-    public String title;
-    public String year;
+    public WebImage poster;
+    public JLabel title;
+    public JLabel year;
 
     public TitleCard() {
-    
+
     }
 
 
