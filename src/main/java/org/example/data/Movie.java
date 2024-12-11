@@ -1,4 +1,4 @@
-package org.example.criticclick.model;
+package org.example.data;
 
 public class Movie {
 
