@@ -52,12 +52,13 @@ public class HashMapngGroup1<K, V> {
     }
 
     // returns the value by a specific key in the map
+    // if there is a collision this function will return the last value in the linked list
     public V get(K key){
         int index = hash(key);
         Node<K, V> temp = dataMap[index];
 
         while (temp != null){
-            if (temp.key.equals(key)){
+            if (temp.key.equals(key) && temp.next == null){
                 return temp.value;
             }
 
