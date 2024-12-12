@@ -28,7 +28,6 @@ public class HashMapngGroup1<K, V> {
         dataMap = new Node[size];
     }
 
-
     // The hash function
     private int hash(K key){
         return key == null ? 0 : Math.abs(key.hashCode() % size);

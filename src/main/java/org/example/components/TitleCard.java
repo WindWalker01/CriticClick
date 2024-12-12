@@ -12,22 +12,22 @@ public class TitleCard extends JPanel {
     public JLabel year;
 
     public TitleCard() {
-        FlowLayout layout = new FlowLayout();
-        setLayout(layout);
+        setLayout(null);
 
-        // this is by no means no magic numbers
-        // I measured this in figma
-        setSize(new Dimension(154, 265));
+        setSize(154,265);
 
         poster = new WebImage("https://image.tmdb.org/t/p/w154/yh64qw9mgXBvlaWDi7Q9tpUBAvH.jpg");
+        poster.setBounds(5, 5, 154, 231);
 
         title = new JLabel("Title");
-        title.setSize(154, getHeight());
-        title.setBackground(Color.red);
-        year = new JLabel("Year");
-        year.setSize(154, getHeight());
-        year.setBackground(Color.yellow);
+        title.setBounds(5 ,poster.getHeight() + 5, getWidth(), 16);
+        title.setBackground(Color.white);
+        title.setHorizontalAlignment(SwingConstants.CENTER);
+        title.setHorizontalTextPosition(SwingConstants.CENTER);
 
+        year = new JLabel("Year");
+        year.setBounds(5 ,252, getWidth(), 16);
+        year.setHorizontalAlignment(SwingConstants.CENTER);
 
         add(poster);
         add(title);
