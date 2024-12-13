@@ -4,6 +4,7 @@ import org.example.dsa.HashMapngGroup1;
 import org.example.pages.Create;
 import org.example.pages.CriticPage;
 import org.example.pages.Home;
+import org.example.pages.Poster;
 
 import javax.swing.*;
 
@@ -26,6 +27,7 @@ public class CriticWindow extends JFrame {
 
         addPage(Page.Home, new Home(this));
         addPage(Page.Create, new Create(this));
+        addPage(Page.Poster, new Poster(this));
 
         changePage(Page.Home);
 
