@@ -9,5 +9,5 @@ public enum Page {
     Loading,
     Profile,
     More,
-    Poster
+    LogPage, Poster
 }

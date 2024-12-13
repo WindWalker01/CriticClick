@@ -10,4 +10,5 @@ public class CriticPage extends JPanel {
         setSize(1280, 720);
     }
 
+
 }
