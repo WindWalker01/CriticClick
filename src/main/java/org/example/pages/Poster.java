@@ -22,7 +22,7 @@ public class Poster extends CriticPage {
 
     public Poster(CriticWindow window) {
 
-        TitleCard[] titleCards = new TitleCard[] {
+        TitleCard[] titleCards = new TitleCard[]{
                 new TitleCard(),
                 new TitleCard(),
                 new TitleCard(),
@@ -46,7 +46,7 @@ public class Poster extends CriticPage {
         JLabel browse = new JLabel("BROWSE BY");
         browse.setFont(new Font("Arial", Font.BOLD, 14));
 
-        String[] genres = { "Select Genre", "Action", "Adventure", "Drama", "Sci-Fi" };
+        String[] genres = {"Select Genre", "Action", "Adventure", "Drama", "Sci-Fi"};
         genreComboBox = new JComboBox<>(genres);
         genreComboBox.setFont(new Font("Arial", Font.BOLD, 14));
         genreComboBox.setPreferredSize(new Dimension(200, 40));
@@ -59,7 +59,7 @@ public class Poster extends CriticPage {
         });
 
         JLabel findFilm = new JLabel("FIND A FILM");
-        findFilm.setBounds(865,100,100,100);
+        findFilm.setBounds(865, 100, 100, 100);
         findFilm.setFont(new Font("Arial", Font.BOLD, 14));
 
         search = new JTextField("Search");
@@ -77,7 +77,7 @@ public class Poster extends CriticPage {
 
 
         JLabel popularFilms = new JLabel("FILMS");
-        popularFilms.setBounds(50,0,300,100);
+        popularFilms.setBounds(50, 0, 300, 100);
         popularFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
 
@@ -102,13 +102,13 @@ public class Poster extends CriticPage {
         up.setBackground(CriticWindow.LIGHT_BEIGE);
 
 
-        JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT,30,0));
+        JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 30, 0));
         leftPanel.setBackground(CriticWindow.LIGHT_BEIGE);
         leftPanel.add(browse);
         leftPanel.add(genreComboBox);
 
 
-        JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT,30,0));
+        JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 30, 0));
         rightPanel.setBackground(CriticWindow.LIGHT_BEIGE);
         rightPanel.add(findFilm);
         rightPanel.add(search);
@@ -148,9 +148,6 @@ public class Poster extends CriticPage {
         poster.add(low);
         poster.add(popularThisWeek);
         poster.add(lowest);
-
-
-
 
 
         scrollPane = new JScrollPane(poster);
@@ -193,3 +190,4 @@ public class Poster extends CriticPage {
 //
 //        add(titleCard);
     }
+}
