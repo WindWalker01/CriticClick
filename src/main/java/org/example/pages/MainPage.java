@@ -20,11 +20,11 @@ public class MainPage extends CriticPage implements ActionListener {
     public JLabel CriticSubTitle;
     public boolean signIn = false;
     public boolean createAcc = false;
-
+    public CriticWindow window;
 
 
     public MainPage(CriticWindow window) {
-
+    this.window = window;
         signButton = new JButton("Sign in");
         signButton.setFont(new Font("Arial", Font.BOLD, 14));
         signButton.setBounds(350, 430, 260, 50);
@@ -32,6 +32,7 @@ public class MainPage extends CriticPage implements ActionListener {
         signButton.setForeground(new Color(121, 87,87));
         signButton.setBorder(new LineBorder(new Color(121, 87, 87), 2));
         signButton.addActionListener( this);
+        signButton.setFocusable(false);
 
         createButton = new JButton("Create Account");
         createButton.setFont(new Font("Arial", Font.BOLD, 14));
@@ -39,6 +40,7 @@ public class MainPage extends CriticPage implements ActionListener {
         createButton.setForeground(Color.WHITE);
         createButton.setBackground(new Color(121, 87, 87));
         createButton.addActionListener( this);
+        createButton.setFocusable(false);
 
         CriticLogo = new JLabel(new ImageIcon("src/main/resources/CRITIC_CLICK_logo.png"));
         CriticLogo.setBounds(530,  10,200,300);
@@ -68,17 +70,14 @@ public class MainPage extends CriticPage implements ActionListener {
         });
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == createButton) {
+            window.changePage(Page.Create);
+        }
+        if (e.getSource() == signButton) {
+            window.changePage(Page.Home);
+        }
     }
-
-
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//       if (e.getSource() == signButton){
-//           window.changePage(Page.Create);
-//       }
-//
-//    }
 }

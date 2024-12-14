@@ -27,8 +27,12 @@ public class Home extends CriticPage {
                 new TitleCard(),
                 new TitleCard(),
                 new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
         };
-
 
         JLabel browse = new JLabel("BROWSE BY");
         browse.setBounds(170,100,100,100);
@@ -70,7 +74,7 @@ public class Home extends CriticPage {
         moreFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
       MovieTitleHolder popularThisWeek = new MovieTitleHolder(titleCards);
-        popularThisWeek.setPreferredSize(new Dimension(1200, 500));
+        popularThisWeek.setPreferredSize(new Dimension(1200, 1200));
 
         // upper section
         JPanel up = new JPanel();
@@ -90,7 +94,7 @@ public class Home extends CriticPage {
         JPanel poster = new JPanel();
         poster.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         poster.setBackground(CriticWindow.LIGHT_BEIGE);
-        poster.setPreferredSize(new Dimension(1200, 1400));
+        poster.setPreferredSize(new Dimension(1200, 1500));
 
         poster.add(up);
         poster.add(low);
@@ -100,7 +104,7 @@ public class Home extends CriticPage {
         // Create the JScrollPane
 
         scrollPane = new JScrollPane(poster);
-        scrollPane.setBounds(0, 65, 1270, 700);
+        scrollPane.setBounds(0, 65, 1270, 1400);
         scrollPane.setBackground(CriticWindow.LIGHT_BEIGE);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
