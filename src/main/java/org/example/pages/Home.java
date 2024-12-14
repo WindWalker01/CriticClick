@@ -29,6 +29,7 @@ public class Home extends CriticPage {
                 new TitleCard(),
                 new TitleCard(),
 
+
         };
 
         JLabel browse = new JLabel("BROWSE BY");

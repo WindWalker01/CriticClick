@@ -10,7 +10,6 @@ public class MovieTitleHolder extends JPanel {
 
     public MovieTitleHolder(TitleCard[] titleCards){
         setLayout(new FlowLayout(FlowLayout.CENTER, 30, 10));
-
         setSize(900, 265);
         setPreferredSize(new Dimension(900, 265));
 

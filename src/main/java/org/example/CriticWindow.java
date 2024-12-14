@@ -32,9 +32,6 @@ public class CriticWindow extends JFrame {
         addPage(Page.Poster, new Poster(this));
 
         changePage(Page.Poster);
-
-
-
     }
 
 
@@ -43,8 +40,6 @@ public class CriticWindow extends JFrame {
         panel.setVisible(false);
         add(panel);
     }
-
-
 
     public void changePage(Page desiredPage){
         for (HashMapngGroup1.Node<Page, CriticPage> set : pages.entrySet()){

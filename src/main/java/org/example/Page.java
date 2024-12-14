@@ -11,6 +11,4 @@ public enum Page {
     More,
     Poster,
     MainPage,
-    ;
-
 }
