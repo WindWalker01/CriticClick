@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Banner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="changed bg color">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Loading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/loading.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/CriticPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/CriticPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/LogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +73,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\FILES\IntelliJ (JAVA)\dikonakayamaam\CriticClick\src\main\resources" />
+      <recent name="D:\FILES\IntelliJ (JAVA)\dikonakayamaam\CriticClick\src\main\loading" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -135,17 +134,30 @@
       <workItem from="1733984297562" duration="3439000" />
       <workItem from="1733987882567" duration="321000" />
     </task>
+    <task id="LOCAL-00001" summary="changed bg color">
+      <option name="closed" value="true" />
+      <created>1734158495250</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734158495250</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changed bg color" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed bg color" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java</url>
-          <line>14</line>
+          <line>10</line>
           <properties field="WINDOW_WIDTH" class="org.example.CriticWindow" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>

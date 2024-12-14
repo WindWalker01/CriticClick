@@ -1,12 +1,15 @@
 package org.example.pages;
 
 import org.example.CriticWindow;
+import org.example.Page;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainPage extends CriticPage implements ActionListener {
 
@@ -56,18 +59,26 @@ public class MainPage extends CriticPage implements ActionListener {
         add(createButton);
         add(signButton);
 
+        // pang test lang
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                window.changePage(Page.Create);
+            }
+        });
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
-//        if (e.getSource() == signButton){
-//            signIn = true;
-//            System.out.println("login "+signIn);
-//        }
-//        if (e.getSource() == createButton){
-//            createAcc = true;
-//            System.out.println("create "+createAcc);
-//        }
+
     }
+
+
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//       if (e.getSource() == signButton){
+//           window.changePage(Page.Create);
+//       }
+//
+//    }
 }
