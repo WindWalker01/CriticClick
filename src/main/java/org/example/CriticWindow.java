@@ -1,15 +1,14 @@
 package org.example;
 
 import org.example.dsa.HashMapngGroup1;
-import org.example.pages.Create;
-import org.example.pages.CriticPage;
-import org.example.pages.Home;
-import org.example.pages.Poster;
+import org.example.pages.*;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class CriticWindow extends JFrame {
 
+    public static final Color LIGHT_BEIGE = new Color(229, 225, 218)  ;
     private final int WINDOW_WIDTH = 1280;
     private final int WINDOW_HEIGHT = 720;
 
@@ -25,11 +24,14 @@ public class CriticWindow extends JFrame {
         setTitle("CriticClick");
         setResizable(false);
 
-        addPage(Page.Home, new Home(this));
+        addPage(Page.Home, new Poster(this));
         addPage(Page.Create, new Create(this));
+        addPage(Page.MainPage, new MainPage(this));
+        addPage(Page.Profile, new Profile(this));
+        addPage(Page.Loading, new Loading(this));
         addPage(Page.Poster, new Poster(this));
 
-        changePage(Page.Home);
+        changePage(Page.Poster);
 
 
 

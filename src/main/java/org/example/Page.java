@@ -10,4 +10,7 @@ public enum Page {
     Profile,
     More,
     Poster,
+    MainPage,
+    ;
+
 }

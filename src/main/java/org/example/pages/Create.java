@@ -79,8 +79,6 @@ public class Create extends CriticPage implements ActionListener {
         if (e.getSource() == started) {
             window.changePage(Page.Loading);
         }
-        if (e.getSource() == back) {
-            window.changePage(Page.MainPage);
-        }
+
     }
 }
