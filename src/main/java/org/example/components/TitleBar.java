@@ -22,7 +22,7 @@ public class TitleBar extends JPanel {
 
         logo.setBounds(new Rectangle(26, 0, 64, 64));
 
-        title.setBounds(new Rectangle(99, 0, 300, 64));
+        title.setBounds(new Rectangle(99, 0, 200, 64));
         title.setFont(new Font("Arial", Font.BOLD, 32));
 
         user.setBounds(1166, 16, 32, 32);
