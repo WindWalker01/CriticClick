@@ -12,7 +12,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Poster extends CriticPage {
+public class More extends CriticPage {
 
     private final JComboBox<String> genreComboBox;
     private final JTextField search;
@@ -20,7 +20,7 @@ public class Poster extends CriticPage {
     public JButton back;
     public JButton next;
 
-    public Poster(CriticWindow window) {
+    public More(CriticWindow window) {
 
         TitleCard[] titleCards = new TitleCard[]{
                 new TitleCard(),

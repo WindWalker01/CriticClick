@@ -24,12 +24,12 @@ public class CriticWindow extends JFrame {
         setTitle("CriticClick");
         setResizable(false);
 
-        addPage(Page.Home, new Poster(this));
+        addPage(Page.Home, new More(this));
         addPage(Page.Create, new Create(this));
         addPage(Page.MainPage, new MainPage(this));
         addPage(Page.Profile, new Profile(this));
         addPage(Page.Loading, new Loading(this));
-        addPage(Page.Poster, new Poster(this));
+        addPage(Page.Poster, new More(this));
 
         changePage(Page.Poster);
     }
