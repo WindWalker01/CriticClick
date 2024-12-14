@@ -15,7 +15,7 @@ public class TitleBar extends JPanel implements ActionListener {
     private JLabel title;
     private JLabel user;
     private JButton Home, Profile;
-    private CriticWindow window;
+    public CriticWindow window;
 
 
     public TitleBar() {
@@ -69,6 +69,7 @@ public class TitleBar extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         if(e.getSource() == Home){
             window.changePage(Page.Home);
         }
