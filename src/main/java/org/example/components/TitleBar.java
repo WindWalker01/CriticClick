@@ -15,7 +15,7 @@ public class TitleBar extends JPanel implements ActionListener {
     private JLabel title;
     private JLabel user;
     private JButton Home, Profile;
-    private CriticWindow window;
+    public CriticWindow window;
 
 
     public TitleBar() {
@@ -36,7 +36,7 @@ public class TitleBar extends JPanel implements ActionListener {
 
         user.setBounds(1166, 16, 32, 32);
 
-        Home = new JButton("Home");
+        Home = new JButton("Poster");
         Home.setBackground(new Color(0x756565));
         Home.setFocusPainted(false);
         Home.setForeground(Color.white);
@@ -69,6 +69,7 @@ public class TitleBar extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         if(e.getSource() == Home){
             window.changePage(Page.Home);
         }

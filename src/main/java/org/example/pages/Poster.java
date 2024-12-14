@@ -5,7 +5,6 @@ import org.example.Page;
 import org.example.components.MovieTitleHolder;
 import org.example.components.TitleBar;
 import org.example.components.TitleCard;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.FocusAdapter;
@@ -13,13 +12,15 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Home extends CriticPage {
+public class Poster extends CriticPage {
 
     private final JComboBox<String> genreComboBox;
     private final JTextField search;
     public JScrollPane scrollPane;
+    public JButton back;
+    public JButton next;
 
-    public Home(CriticWindow window) {
+    public Poster(CriticWindow window) {
 
         TitleCard[] titleCards = new TitleCard[] {
                 new TitleCard(),
@@ -28,8 +29,18 @@ public class Home extends CriticPage {
                 new TitleCard(),
                 new TitleCard(),
                 new TitleCard(),
-
-
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
+                new TitleCard(),
         };
 
         JLabel browse = new JLabel("BROWSE BY");
@@ -64,16 +75,13 @@ public class Home extends CriticPage {
             }
         });
 
-        
-        JLabel popularFilms = new JLabel("POPULAR FILMS THIS WEEK");
+
+        JLabel popularFilms = new JLabel("FILMS");
         popularFilms.setBounds(50,0,300,100);
         popularFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
-        JLabel moreFilms = new JLabel("MORE");
-        moreFilms.setBounds(140,0,100,100);
-        moreFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
-      MovieTitleHolder popularThisWeek = new MovieTitleHolder(titleCards);
+        MovieTitleHolder popularThisWeek = new MovieTitleHolder(titleCards);
         popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
 
         //spacer
@@ -114,25 +122,40 @@ public class Home extends CriticPage {
         low.setBackground(CriticWindow.LIGHT_BEIGE);
         low.setLayout(new BorderLayout());
         low.add(popularFilms, BorderLayout.WEST);
-        low.add(moreFilms, BorderLayout.EAST);
+
+
+        back = new JButton("Back");
+        back.setBounds(1100, 600, 76, 35);
+        back.setFont(new Font("Arial", Font.BOLD, 10));
+        back.setForeground(Color.WHITE);
+        back.setBackground(Color.BLACK);
+        back.setFocusable(false);
 
         JPanel poster = new JPanel();
         poster.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         poster.setBackground(CriticWindow.LIGHT_BEIGE);
         poster.setPreferredSize(new Dimension(1200, 1500));
 
+        // lowest
+        JPanel lowest = new JPanel();
+        lowest.setPreferredSize(new Dimension(1050, 25));
+        lowest.setLayout(new BorderLayout());
+        lowest.add(back, BorderLayout.WEST);
+
         poster.add(spacerUp);
         poster.add(up);
         poster.add(spacerLow);
         poster.add(low);
         poster.add(popularThisWeek);
+        poster.add(lowest);
 
 
-        // Create the JScrollPane
+
+
 
         scrollPane = new JScrollPane(poster);
         scrollPane.setBounds(0, 65, 1270, 720);
-        scrollPane.setBackground(CriticWindow.LIGHT_BEIGE);
+        scrollPane.setBackground(Color.WHITE);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBorder(null);

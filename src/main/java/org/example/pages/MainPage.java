@@ -1,12 +1,13 @@
 package org.example.pages;
-
 import org.example.CriticWindow;
-
+import org.example.Page;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainPage extends CriticPage implements ActionListener {
 
@@ -15,27 +16,29 @@ public class MainPage extends CriticPage implements ActionListener {
     public JLabel CriticLogo;
     public JLabel CriticTitle;
     public JLabel CriticSubTitle;
-    public boolean signIn = false;
-    public boolean createAcc = false;
-
+ //   public boolean signButton = false;
+ //   public boolean createAcc = false;
+    public CriticWindow window;
 
 
     public MainPage(CriticWindow window) {
-
-        signButton = new JButton("Sign in");
-        signButton.setFont(new Font("Arial", Font.BOLD, 14));
-        signButton.setBounds(350, 430, 260, 50);
-        signButton.setBackground(new Color(229, 225, 218));
-        signButton.setForeground(new Color(121, 87,87));
-        signButton.setBorder(new LineBorder(new Color(121, 87, 87), 2));
-        signButton.addActionListener( this);
-
+    this.window = window;
         createButton = new JButton("Create Account");
         createButton.setFont(new Font("Arial", Font.BOLD, 14));
-        createButton.setBounds(650, 430, 260, 50);
-        createButton.setForeground(Color.WHITE);
-        createButton.setBackground(new Color(121, 87, 87));
+        createButton.setBounds(350, 430, 260, 50);
+        createButton.setBackground(new Color(229, 225, 218));
+        createButton.setForeground(new Color(121, 87,87));
+        createButton.setBorder(new LineBorder(new Color(121, 87, 87), 2));
         createButton.addActionListener( this);
+        createButton.setFocusable(false);
+
+        signButton = new JButton("Sign In");
+        signButton.setFont(new Font("Arial", Font.BOLD, 14));
+        signButton.setBounds(650, 430, 260, 50);
+        signButton.setForeground(Color.WHITE);
+        signButton.setBackground(new Color(121, 87, 87));
+        signButton.addActionListener( this);
+        signButton.setFocusable(false);
 
         CriticLogo = new JLabel(new ImageIcon("src/main/resources/CRITIC_CLICK_logo.png"));
         CriticLogo.setBounds(530,  10,200,300);
@@ -56,18 +59,23 @@ public class MainPage extends CriticPage implements ActionListener {
         add(createButton);
         add(signButton);
 
+        // pang test lang
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                window.changePage(Page.Create);
+            }
+        });
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-//        if (e.getSource() == signButton){
-//            signIn = true;
-//            System.out.println("login "+signIn);
-//        }
-//        if (e.getSource() == createButton){
-//            createAcc = true;
-//            System.out.println("create "+createAcc);
-//        }
+        if (e.getSource() == createButton) {
+            window.changePage(Page.Create);
+        }
+        if (e.getSource() == signButton) {
+            window.changePage(Page.Home);
+        }
     }
 }
