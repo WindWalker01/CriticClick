@@ -30,8 +30,9 @@ public class CriticWindow extends JFrame {
         addPage(Page.Create, new Create(this));
         addPage(Page.MainPage, new MainPage(this));
         addPage(Page.Profile, new Profile(this));
+        addPage(Page.Loading, new Loading(this));
         add(titleBar, BorderLayout.NORTH);
-        changePage(Page.Loading);
+        changePage(Page.MainPage);
 
     }
 
@@ -45,7 +46,7 @@ public class CriticWindow extends JFrame {
 
 
     public void changePage(Page desiredPage){
-        if(desiredPage == Page.MainPage){
+        if(desiredPage == Page.MainPage ) {
             remove(titleBar);
         }
         for (HashMapngGroup1.Node<Page, CriticPage> set : pages.entrySet()){

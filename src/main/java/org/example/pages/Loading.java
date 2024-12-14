@@ -16,6 +16,7 @@ public class Loading extends CriticPage implements ActionListener {
         loading = new JLabel(new ImageIcon("src/main/resources/loading.gif"));
         loading.setBounds(530, 180, 200, 300);
         add(loading);
+
     }
 
     @Override
