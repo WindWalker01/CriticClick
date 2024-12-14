@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="changed bg color">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Loading.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/loading.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/CriticPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/CriticPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +60,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Dev/Java/CriticClick/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
   }
@@ -79,7 +76,7 @@
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="javafx" />
+      <module name="CriticClick" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -151,17 +148,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed bg color" />
     <option name="LAST_COMMIT_MESSAGE" value="changed bg color" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java</url>
-          <line>10</line>
-          <properties field="WINDOW_WIDTH" class="org.example.CriticWindow" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
