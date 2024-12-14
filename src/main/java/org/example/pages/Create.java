@@ -17,9 +17,10 @@ public class Create extends CriticPage implements ActionListener {
     public JTextField email;
     public JTextField password;
     public JLabel banner;
+    public CriticWindow window;
 
     public Create(CriticWindow window) {
-
+        this.window = window;
         banner = new JLabel(new ImageIcon("src/main/resources/Banner.png"));
         banner.setBounds(835,  0,432,719);
 
@@ -64,17 +65,22 @@ public class Create extends CriticPage implements ActionListener {
 
 
         // TODO: remove this shit later this is for debugging purposes only
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                window.changePage(Page.Loading);
-            }
-        });
+//        addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                window.changePage(Page.Loading);
+//            }
+//        });
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == started) {
+            window.changePage(Page.Loading);
+        }
+        if (e.getSource() == back) {
+            window.changePage(Page.MainPage);
+        }
     }
 }
