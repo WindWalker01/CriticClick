@@ -1,8 +1,6 @@
 package org.example.pages;
-
 import org.example.CriticWindow;
 import org.example.Page;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -10,8 +8,16 @@ import java.awt.event.MouseEvent;
 
 public class Create extends CriticPage {
 
+    public JButton createButton;
+    public JButton signButton;
+    public JLabel CriticLogo;
+    public JLabel CriticTitle;
+    public JLabel CriticSubTitle;
+    public boolean signIn = false;
+    public boolean createAcc = false;
+
     public Create(CriticWindow window) {
-        setBackground(new Color(0x6495ED));
+
 
 
         // TODO: remove this shit later this is for debugging purposes only

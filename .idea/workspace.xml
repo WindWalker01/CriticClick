@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="Created Log Page. Nachange ko den sa logpage yunng changepage">
+    <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Banner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/LogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/LogPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/CriticPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/CriticPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/LogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +37,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;DirePnl&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/WindWalker01/CriticClick.git&quot;,
-    &quot;accountId&quot;: &quot;7553f2d0-aae0-486d-bf9a-0f662184e3fc&quot;
-  }
-}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -52,49 +48,42 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2q46nUqvxY8wFQIj7CX0VIKgKif" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.LogPage.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;log-page-branch-kyle&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kyle/IdeaProjects/CriticClick&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Dev/Java/CriticClick/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "yonil",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Dev/Java/CriticClick/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FILES\IntelliJ (JAVA)\dikonakayamaam\CriticClick\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="LogPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.pages.LogPage" />
-      <module name="CriticClick" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.pages.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="CriticClick" />
+      <module name="javafx" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.pages.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +107,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.LogPage" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -126,8 +114,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.387" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
       </set>
     </attachedChunks>
   </component>
@@ -146,27 +134,22 @@
       <workItem from="1733972877562" duration="4488000" />
       <workItem from="1733984297562" duration="3439000" />
       <workItem from="1733987882567" duration="321000" />
-      <workItem from="1733993782545" duration="41000" />
-      <workItem from="1733993868935" duration="589000" />
-      <workItem from="1734105559535" duration="5559000" />
-      <workItem from="1734142110871" duration="883000" />
     </task>
-    <task id="LOCAL-00001" summary="Created Log Page. Nachange ko den sa logpage yunng changepage">
-      <option name="closed" value="true" />
-      <created>1734110227237</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1734110227237</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created Log Page. Nachange ko den sa logpage yunng changepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Log Page. Nachange ko den sa logpage yunng changepage" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java</url>
+          <line>14</line>
+          <properties field="WINDOW_WIDTH" class="org.example.CriticWindow" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

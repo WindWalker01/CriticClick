@@ -1,5 +1,6 @@
 package org.example.components;
 
+import org.example.CriticWindow;
 import org.example.components.primitives.WebImage;
 
 import javax.swing.*;
@@ -13,7 +14,7 @@ public class TitleCard extends JPanel {
 
     public TitleCard() {
         setLayout(null);
-
+        setBackground(CriticWindow.LIGHT_BEIGE);
         setSize(154,265);
 
         poster = new WebImage("https://image.tmdb.org/t/p/w154/yh64qw9mgXBvlaWDi7Q9tpUBAvH.jpg");

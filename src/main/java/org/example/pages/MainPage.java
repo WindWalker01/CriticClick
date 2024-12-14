@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LogPage extends CriticPage implements ActionListener {
+public class MainPage extends CriticPage implements ActionListener {
 
     public JButton createButton;
     public JButton signButton;
@@ -20,9 +20,7 @@ public class LogPage extends CriticPage implements ActionListener {
 
 
 
-    public LogPage(CriticWindow window) {
-
-        setBackground(new Color(229, 225, 218));
+    public MainPage(CriticWindow window) {
 
         signButton = new JButton("Sign in");
         signButton.setFont(new Font("Arial", Font.BOLD, 14));
