@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/components/MovieTitleHolder.java" afterDir="false" />
+    <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="home">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/components/ProfileBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Profile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dsa/HashMapngGroup1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dsa/HashMapngGroup1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleBar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="yonil" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -38,27 +43,35 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2q46nUqvxY8wFQIj7CX0VIKgKif" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Dev/Java/CriticClick/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "log-page-branch-kyle",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Dev/Java/CriticClick/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FILES\IntelliJ (JAVA)\dikonakayamaam\CriticClick\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -117,9 +130,31 @@
       <workItem from="1733984297562" duration="3439000" />
       <workItem from="1733987882567" duration="321000" />
     </task>
+    <task id="LOCAL-00001" summary="added actionlistener.">
+      <option name="closed" value="true" />
+      <created>1734162811453</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734162811453</updated>
+    </task>
+    <task id="LOCAL-00002" summary="home">
+      <option name="closed" value="true" />
+      <created>1734163755459</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734163755459</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added actionlistener." />
+    <MESSAGE value="home" />
+    <option name="LAST_COMMIT_MESSAGE" value="home" />
   </component>
 </project>
