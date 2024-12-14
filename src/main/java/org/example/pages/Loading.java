@@ -1,4 +1,5 @@
 package org.example.pages;
+
 import org.example.CriticWindow;
 import org.example.Page;
 import javax.swing.*;
