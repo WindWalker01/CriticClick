@@ -11,6 +11,8 @@ public class CriticWindow extends JFrame {
     public static final Color LIGHT_BEIGE = new Color(229, 225, 218);
     private final int WINDOW_WIDTH = 1280;
     private final int WINDOW_HEIGHT = 720;
+
+
     private HashMapngGroup1<Page, CriticPage> pages = new HashMapngGroup1();
 
     public CriticWindow(){
@@ -25,10 +27,9 @@ public class CriticWindow extends JFrame {
         addPage(Page.Home, new Home(this));
         addPage(Page.Create, new Create(this));
         addPage(Page.MainPage, new MainPage(this));
-        addPage(Page.Loading, new Loading(this));
         addPage(Page.Profile, new Profile(this));
-        changePage(Page.Home);
 
+        changePage(Page.Profile);
 
     }
 
