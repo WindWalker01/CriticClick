@@ -193,4 +193,3 @@ public class Poster extends CriticPage {
 //
 //        add(titleCard);
     }
-}
