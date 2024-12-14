@@ -1,6 +1,7 @@
 package org.example.components;
 
 import org.example.CriticWindow;
+import org.example.pages.CriticPage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,7 @@ public class MovieTitleHolder extends JPanel {
         for(TitleCard titleCard : titleCards){
             titleCard.setPreferredSize(new Dimension(150, 300));
             add(titleCard);
-            setBackground(CriticWindow.LIGHT_BEIGE);
+            setBackground(CriticPage.LIGHT_BEIGE);
 
         }
 

@@ -6,9 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CriticPage extends JPanel {
+    public static Color LIGHT_BEIGE = new Color(229, 225, 218);
 
     public CriticPage() {
-        setBackground(new Color(229, 225, 218));
+        setBackground(LIGHT_BEIGE);
         setLayout(null);
         setSize(1280, 720);
     }
