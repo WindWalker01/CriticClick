@@ -36,7 +36,7 @@ public class TitleBar extends JPanel implements ActionListener {
 
         user.setBounds(1166, 16, 32, 32);
 
-        Home = new JButton("Home");
+        Home = new JButton("Poster");
         Home.setBackground(new Color(0x756565));
         Home.setFocusPainted(false);
         Home.setForeground(Color.white);

@@ -15,13 +15,14 @@ public class TitleCard extends JPanel {
     public TitleCard() {
         setLayout(null);
         setSize(154,265);
+        setBackground(CriticWindow.LIGHT_BEIGE);
 
         poster = new WebImage("https://image.tmdb.org/t/p/w154/yh64qw9mgXBvlaWDi7Q9tpUBAvH.jpg");
         poster.setBounds(5, 5, 154, 231);
 
+
         title = new JLabel("Title");
         title.setBounds(5 ,poster.getHeight() + 5, getWidth(), 16);
-        title.setBackground(Color.white);
         title.setHorizontalAlignment(SwingConstants.CENTER);
         title.setHorizontalTextPosition(SwingConstants.CENTER);
 
