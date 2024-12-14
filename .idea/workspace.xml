@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/More.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/More.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/MovieRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/MovieRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
