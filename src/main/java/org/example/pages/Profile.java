@@ -49,7 +49,7 @@ public class Profile extends CriticPage implements ActionListener {
         add(Back);
         add(Logout);
         add(profileBar);
-        add(new TitleBar());
+        add(new TitleBar(window));
     }
 
     @Override

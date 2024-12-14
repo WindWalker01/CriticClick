@@ -45,7 +45,7 @@ public class CriticWindow extends JFrame {
         for (HashMapngGroup1.Node<Page, CriticPage> set : pages.entrySet()){
             if(set.key == desiredPage){
                 set.value.setVisible(true);
-                System.out.println("hello");
+                System.out.println(desiredPage);
             }else{
                 set.value.setVisible(false);
             }

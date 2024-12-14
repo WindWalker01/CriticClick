@@ -18,8 +18,8 @@ public class TitleBar extends JPanel implements ActionListener {
     public CriticWindow window;
 
 
-    public TitleBar() {
-
+    public TitleBar(CriticWindow window) {
+        this.window = window;
 
         setBackground(new Color(0x756565));
         setLayout(null);

@@ -138,7 +138,7 @@ public class Home extends CriticPage {
         scrollPane.setBorder(null);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);  // to make scroll faster
 
-        add(new TitleBar());
+        add(new TitleBar(window));
         add(scrollPane);
 
 
