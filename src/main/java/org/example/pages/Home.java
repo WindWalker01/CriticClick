@@ -28,20 +28,17 @@ public class Home extends CriticPage {
                 new TitleCard(),
                 new TitleCard(),
                 new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
+
         };
 
         JLabel browse = new JLabel("BROWSE BY");
-        browse.setBounds(170,100,100,100);
-        browse.setFont(new Font("Arial", Font.BOLD, 13));
+        browse.setFont(new Font("Arial", Font.BOLD, 14));
 
         String[] genres = { "Select Genre", "Action", "Adventure", "Drama", "Sci-Fi" };
         genreComboBox = new JComboBox<>(genres);
-        genreComboBox.setFont(new Font("Arial", Font.BOLD, 10));
-        genreComboBox.setBounds(263, 136, 150, 25);
+        genreComboBox.setFont(new Font("Arial", Font.BOLD, 14));
+        genreComboBox.setPreferredSize(new Dimension(200, 40));
+        genreComboBox.setBounds(263, 136, 50, 25);
         genreComboBox.setFocusable(false);
         genreComboBox.setBackground(Color.WHITE);
         genreComboBox.addActionListener(e -> {
@@ -49,12 +46,13 @@ public class Home extends CriticPage {
             System.out.println("Selected genre: " + selectedGenre);
         });
 
-        JLabel findFilm = new JLabel("SEARCH");
+        JLabel findFilm = new JLabel("FIND A FILM");
         findFilm.setBounds(865,100,100,100);
-        findFilm.setFont(new Font("Arial", Font.BOLD, 13));
+        findFilm.setFont(new Font("Arial", Font.BOLD, 14));
 
         search = new JTextField("Search");
-        search.setBounds(933, 136, 150, 25);
+        search.setBounds(933, 136, 150, 55);
+        search.setPreferredSize(new Dimension(200, 40));
         search.setFont(new Font("Arial", Font.BOLD, 10));
         search.setEditable(true);
         search.setBackground(Color.WHITE);
@@ -65,6 +63,7 @@ public class Home extends CriticPage {
             }
         });
 
+        
         JLabel popularFilms = new JLabel("POPULAR FILMS THIS WEEK");
         popularFilms.setBounds(50,0,300,100);
         popularFilms.setFont(new Font("Arial", Font.BOLD, 15));
@@ -74,29 +73,56 @@ public class Home extends CriticPage {
         moreFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
       MovieTitleHolder popularThisWeek = new MovieTitleHolder(titleCards);
-        popularThisWeek.setPreferredSize(new Dimension(1200, 1200));
+        popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
+
+        //spacer
+        JPanel spacerUp = new JPanel();
+        spacerUp.setLayout(null);
+        spacerUp.setPreferredSize(new Dimension(1050, 50));
+        spacerUp.setBackground(CriticWindow.LIGHT_BEIGE);
+
+        JPanel spacerLow = new JPanel();
+        spacerLow.setLayout(null);
+        spacerLow.setPreferredSize(new Dimension(1050, 80));
+        spacerLow.setBackground(CriticWindow.LIGHT_BEIGE);
 
         // upper section
         JPanel up = new JPanel();
-        setLayout(null);
-        up.add(browse);
-        up.add(genreComboBox);
-        up.add(findFilm);
-        up.add(search);
+        up.setLayout(new BorderLayout());
+        up.setPreferredSize(new Dimension(1110, 50));
+        up.setBackground(CriticWindow.LIGHT_BEIGE);
+
+
+        JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT,30,0));
+        leftPanel.setBackground(CriticWindow.LIGHT_BEIGE);
+        leftPanel.add(browse);
+        leftPanel.add(genreComboBox);
+
+
+        JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT,30,0));
+        rightPanel.setBackground(CriticWindow.LIGHT_BEIGE);
+        rightPanel.add(findFilm);
+        rightPanel.add(search);
+
+        up.add(leftPanel, BorderLayout.WEST);
+        up.add(rightPanel, BorderLayout.EAST);
 
         // lower section
         JPanel low = new JPanel();
-        setLayout(null);
-        low.add(up);
-        low.add(popularFilms);
-        low.add(moreFilms);
+        low.setPreferredSize(new Dimension(1050, 25));
+        low.setBackground(CriticWindow.LIGHT_BEIGE);
+        low.setLayout(new BorderLayout());
+        low.add(popularFilms, BorderLayout.WEST);
+        low.add(moreFilms, BorderLayout.EAST);
 
         JPanel poster = new JPanel();
         poster.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         poster.setBackground(CriticWindow.LIGHT_BEIGE);
         poster.setPreferredSize(new Dimension(1200, 1500));
 
+        poster.add(spacerUp);
         poster.add(up);
+        poster.add(spacerLow);
         poster.add(low);
         poster.add(popularThisWeek);
 
@@ -104,7 +130,7 @@ public class Home extends CriticPage {
         // Create the JScrollPane
 
         scrollPane = new JScrollPane(poster);
-        scrollPane.setBounds(0, 65, 1270, 1400);
+        scrollPane.setBounds(0, 65, 1270, 720);
         scrollPane.setBackground(CriticWindow.LIGHT_BEIGE);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -113,6 +139,21 @@ public class Home extends CriticPage {
         add(new TitleBar());
         add(scrollPane);
 
+
+        // action listeners
+        search.addFocusListener(new FocusAdapter() {
+            public void focusGained(FocusEvent e) {
+                if (search.getText().equals("Search")) {
+                    search.setText("");  // clear the text when the JTextField is clicked
+                }
+            }
+
+            public void focusLost(FocusEvent e) {
+                if (search.getText().equals("")) {
+                    search.setText("Search");  // restore the default text if the JTextField is empty
+                }
+            }
+        });
 
         addMouseListener(new MouseAdapter() {
             @Override
