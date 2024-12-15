@@ -9,6 +9,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class Poster extends CriticPage implements ActionListener {
 
@@ -24,7 +26,7 @@ public class Poster extends CriticPage implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == back) {
+        if (e.getSource() == back) {
             window.changePage(Page.Home);
         }
     }
@@ -104,17 +106,21 @@ public class Poster extends CriticPage implements ActionListener {
         search.setBounds(550,18,100, 30);
 
 
-        bg = new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.backdropPath){
+        //salamat chatgpt
+        bg = new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.backdropPath) {
             @Override
             protected void paintComponent(Graphics g) {
                 Graphics2D g2d = (Graphics2D) g.create();
-                // Set transparency (50%)
                 g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
-                super.paintComponent(g2d);
+
+                Image image = ((ImageIcon) this.getIcon()).getImage();
+                Image scaledImage = image.getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH);
+                g2d.drawImage(scaledImage, 0, 0, this);
+
                 g2d.dispose();
             }
         };
-        bg.setBounds(0,0,1280, 500);
+        bg.setBounds(0, 0, window.getWidth(), window.getHeight()-220);
 
         add(message);
         add(back);
@@ -128,7 +134,6 @@ public class Poster extends CriticPage implements ActionListener {
         add(search);
         add(searchTf);
         add(new TitleBar(window));
-
         add(bg);
 
     }
