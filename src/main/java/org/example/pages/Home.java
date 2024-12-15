@@ -64,7 +64,6 @@ public class Home extends CriticPage {
             }
         });
 
-
         JLabel popularFilms = new JLabel("POPULAR FILMS THIS WEEK");
         popularFilms.setBounds(50,0,300,100);
         popularFilms.setFont(new Font("Arial", Font.BOLD, 15));
@@ -147,7 +146,6 @@ public class Home extends CriticPage {
                 g.fillRoundRect(r.x, r.y, r.width, r.height, 10, 10);  // Rounded corners for track
             }
         });
-
 
         add(new TitleBar(window));
         add(scrollPane);

@@ -8,6 +8,7 @@ import org.example.data.Movie;
 import org.example.data.MovieRequest;
 import javax.swing.border.LineBorder;
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 import java.awt.*;
 import java.awt.event.*;
@@ -33,15 +34,39 @@ public class More extends CriticPage {
         MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movieMap.get("Default"), 20, window);
         popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
 
-
         String[] genres = {"Select Genre", "Action", "Adventure", "Drama", "Science Fiction"};
         genreComboBox = new JComboBox<>(genres);
         genreComboBox.setFont(new Font("Arial", Font.BOLD, 14));
         genreComboBox.setPreferredSize(new Dimension(200, 40));
         genreComboBox.setBounds(263, 136, 50, 25);
         genreComboBox.setFocusable(false);
-       // genreComboBox.setBackground(Color.WHITE);
         genreComboBox.setBorder(new LineBorder(new Color(0x756565), 2));
+
+        genreComboBox.setUI(new BasicComboBoxUI() {
+            @Override
+            protected JButton createArrowButton() {
+                JButton arrowButton = super.createArrowButton();
+                arrowButton.setBackground(new Color(156, 134, 134));
+                arrowButton.setBorder(new LineBorder(new Color(156, 134, 134)));
+                return arrowButton;
+            }
+        });
+
+        genreComboBox.setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+                    Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                    if (isSelected) {
+                        setBackground(new Color(0x756565));
+                        setForeground(Color.WHITE);
+                    } else {
+                        setBackground(Color.WHITE);
+                        setForeground(Color.BLACK);
+                    }
+                    return c;
+                }
+            });
+
         genreComboBox.addActionListener(e -> {
             String selectedGenre = (String) genreComboBox.getSelectedItem();
 
@@ -63,6 +88,10 @@ public class More extends CriticPage {
                     break;
             }
 
+            popularThisWeek.revalidate();
+            popularThisWeek.repaint();
+            scrollPane.revalidate();
+            scrollPane.repaint();
             System.out.println("Selected genre: " + selectedGenre);
             repaint();
         });

@@ -18,7 +18,6 @@ public class CriticWindow extends JFrame {
     public CriticWindow(){
         addPage(Page.Loading, new Loading(this));
         changePage(Page.Loading);
-
         setLayout(null);
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setLocationRelativeTo(null);
@@ -39,7 +38,6 @@ public class CriticWindow extends JFrame {
         changePage(Page.MainPage);
 
     }
-
 
     public void addPage(Page type, CriticPage panel){
         pages.set(type, panel);
