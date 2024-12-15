@@ -4,17 +4,15 @@ import org.example.CriticWindow;
 import org.example.Page;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-public class TitleBar extends JPanel implements ActionListener {
+public class TitleBar extends JPanel {
 
     private JLabel logo;
     private JLabel title;
     private JLabel user;
-    private JButton Home, Profile;
     public CriticWindow window;
 
 
@@ -26,35 +24,55 @@ public class TitleBar extends JPanel implements ActionListener {
         setSize(new Dimension(1280, 64));
 
         logo = new JLabel(new ImageIcon("src/main/resources/small-icon.png"));
+        logo.setBounds(new Rectangle(26, 0, 64, 64));
         title = new JLabel("CriticClick");
         user = new JLabel(new ImageIcon("src/main/resources/small-Avatar.png"));
 
-        logo.setBounds(new Rectangle(26, 0, 64, 64));
+        title.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                window.changePage(Page.Home);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                title.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+        });
+
+        logo.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                window.changePage(Page.Home);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                logo.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+        });
+
+
+       user.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                window.changePage(Page.Profile);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                user.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+        });
 
         title.setBounds(new Rectangle(99, 0, 200, 64));
         title.setFont(new Font("Arial", Font.BOLD, 32));
 
         user.setBounds(1166, 16, 32, 32);
 
-        Home = new JButton("Poster");
-        Home.setBackground(new Color(0x756565));
-        Home.setFocusPainted(false);
-        Home.setForeground(Color.white);
-        Home.setBorder(new LineBorder(new Color(0x756565)));
-        Home.setBounds(1000, 17 ,100,30);
-        Home.addActionListener(this);
 
-
-        Profile = new JButton("Profile");
-        Profile.setBackground(new Color(0x756565));
-        Profile.setFocusPainted(false);
-        Profile.setForeground(Color.white);
-        Profile.setBorder(new LineBorder(new Color(0x756565)));
-        Profile.setBounds(900, 17 ,100,30);
-        Profile.addActionListener(this);
-
-        add(Home);
-        add(Profile);
         add(logo);
         add(title);
         add(user);
@@ -65,16 +83,5 @@ public class TitleBar extends JPanel implements ActionListener {
 
     public void setWindow(CriticWindow window) {
         this.window = window;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-        if(e.getSource() == Home){
-            window.changePage(Page.Home);
-        }
-        if(e.getSource() == Profile){
-            window.changePage(Page.Profile);
-        }
     }
 }

@@ -189,12 +189,12 @@ public class More extends CriticPage {
             }
         });
 
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                window.changePage(Page.Create);
-            }
-        });
+//        addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                window.changePage(Page.Create);
+//            }
+//        });
 
     }
 

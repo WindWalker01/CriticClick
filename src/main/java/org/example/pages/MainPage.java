@@ -1,6 +1,8 @@
 package org.example.pages;
 import org.example.CriticWindow;
 import org.example.Page;
+import org.example.components.TitleCard;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
@@ -59,13 +61,13 @@ public class MainPage extends CriticPage implements ActionListener {
         add(createButton);
         add(signButton);
 
-        // pang test lang
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                window.changePage(Page.Create);
-            }
-        });
+//        // pang test lang
+//        addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                window.changePage(Page.Create);
+//            }
+//        });
     }
 
 
