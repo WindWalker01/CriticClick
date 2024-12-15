@@ -9,14 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
 public class Poster extends CriticPage implements ActionListener {
 
      JLabel title, rate, synopsis, bg, poster, search;
      JButton back, play, submit;
      JTextField message, searchTf;
+     JComboBox<String> starRate;
 
      private CriticWindow window;
 
@@ -91,11 +90,13 @@ public class Poster extends CriticPage implements ActionListener {
         submit.addActionListener(this);
 
         searchTf = new JTextField();
-        searchTf.setForeground(Color.BLACK);
         searchTf.setFont(new Font("Arial", Font.PLAIN, 18));
         searchTf.setEditable(true);
-        searchTf.setBounds(600,20,200, 25);
-        searchTf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        searchTf.setBounds(600, 20, 200, 25);
+        searchTf.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+        searchTf.setBackground(new Color(250, 246, 238));
+        searchTf.setForeground(Color.BLACK);
+        searchTf.setOpaque(true);
 
         search = new JLabel("Search");
         search.setForeground(Color.WHITE);
@@ -119,6 +120,26 @@ public class Poster extends CriticPage implements ActionListener {
         };
         bg.setBounds(0, 0, window.getWidth(), window.getHeight()-220);
 
+        String[] star = { "Rate", "1 - Bad", "2 - Poor", "3 - Fair", "4 - Very Good", "5 - Excellent" };
+        starRate = new JComboBox<>(star);
+        starRate.setFont(new Font("Arial", Font.BOLD, 14));
+        starRate.setPreferredSize(new Dimension(200, 40));
+        starRate.setBounds(709, 520, 200, 20);
+        starRate.setFocusable(false);
+        starRate.setBackground(Color.WHITE);
+        starRate.addActionListener(e -> {
+            String selectedGenre = (String) starRate.getSelectedItem();
+            System.out.println("Selected genre: " + selectedGenre);
+        });
+        starRate.setBackground(CriticWindow.LIGHT_BEIGE);
+        starRate.setFont(new Font("Arial", Font.BOLD, 14));
+        starRate.setFocusable(false);
+
+
+
+
+
+        add(starRate);
         add(message);
         add(back);
         add(submit);

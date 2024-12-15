@@ -44,6 +44,19 @@ public class MainPage extends CriticPage implements ActionListener {
 
         CriticLogo = new JLabel(new ImageIcon("src/main/resources/CRITIC_CLICK_logo.png"));
         CriticLogo.setBounds(530,  10,200,300);
+        CriticLogo.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                CriticLogo.setForeground(Color.YELLOW);
+                CriticLogo.setBackground(Color.YELLOW);
+                System.out.println("yellow");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                CriticLogo.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+        });
 
         CriticTitle = new JLabel("Welcome to CriticClick");
         CriticTitle.setFont(new Font("Sans Serif", Font.BOLD, 50));
