@@ -14,35 +14,19 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Home extends CriticPage {
-
-    private final JComboBox<String> genreComboBox;
     private final JTextField search;
     public JScrollPane scrollPane;
 
     public Home(CriticWindow window) {
-        JLabel browse = new JLabel("BROWSE BY");
-        browse.setFont(new Font("Arial", Font.BOLD, 14));
-
-        String[] genres = { "Select Genre", "Action", "Adventure", "Drama", "Sci-Fi" };
-        genreComboBox = new JComboBox<>(genres);
-        genreComboBox.setFont(new Font("Arial", Font.BOLD, 14));
-        genreComboBox.setPreferredSize(new Dimension(200, 40));
-        genreComboBox.setBounds(263, 136, 50, 25);
-        genreComboBox.setFocusable(false);
-        genreComboBox.setBackground(Color.WHITE);
-        genreComboBox.addActionListener(e -> {
-            String selectedGenre = (String) genreComboBox.getSelectedItem();
-            System.out.println("Selected genre: " + selectedGenre);
-        });
 
         JLabel findFilm = new JLabel("FIND A FILM");
         findFilm.setBounds(865,100,100,100);
-        findFilm.setFont(new Font("Arial", Font.BOLD, 14));
+        findFilm.setFont(new Font("Arial", Font.BOLD, 16));
 
         search = new JTextField("Search");
-        search.setBounds(933, 136, 150, 55);
-        search.setPreferredSize(new Dimension(200, 40));
-        search.setFont(new Font("Arial", Font.BOLD, 10));
+        search.setBounds(933, 136, 200, 55);
+        search.setPreferredSize(new Dimension(280, 40));
+        search.setFont(new Font("Arial", Font.BOLD, 14));
         search.setEditable(true);
         search.setBackground(Color.WHITE);
         search.addFocusListener(new FocusAdapter() {
@@ -52,7 +36,6 @@ public class Home extends CriticPage {
             }
         });
 
-        
         JLabel popularFilms = new JLabel("POPULAR FILMS THIS WEEK");
         popularFilms.setBounds(50,0,300,100);
         popularFilms.setFont(new Font("Arial", Font.BOLD, 15));
@@ -81,20 +64,12 @@ public class Home extends CriticPage {
         up.setPreferredSize(new Dimension(1110, 50));
         up.setBackground(LIGHT_BEIGE);
 
+        JPanel center = new JPanel(new FlowLayout(FlowLayout.CENTER,30,0));
+        center.setBackground(LIGHT_BEIGE);
+        center.add(findFilm);
+        center.add(search);
 
-        JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT,30,0));
-        leftPanel.setBackground(LIGHT_BEIGE);
-        leftPanel.add(browse);
-        leftPanel.add(genreComboBox);
-
-
-        JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT,30,0));
-        rightPanel.setBackground(LIGHT_BEIGE);
-        rightPanel.add(findFilm);
-        rightPanel.add(search);
-
-        up.add(leftPanel, BorderLayout.WEST);
-        up.add(rightPanel, BorderLayout.EAST);
+        up.add(center, BorderLayout.CENTER);
 
         // lower section
         JPanel low = new JPanel();
@@ -114,7 +89,6 @@ public class Home extends CriticPage {
         poster.add(spacerLow);
         poster.add(low);
         poster.add(popularThisWeek);
-
 
         // Create the JScrollPane
 
@@ -168,19 +142,5 @@ public class Home extends CriticPage {
                 moreFilms.setCursor(new Cursor(Cursor.HAND_CURSOR));
             }
         });
-
-        //eto yung nakakagulo pala
-//        addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                window.changePage(Page.Create);
-//            }
-//        });
-
-        // TODO: remove this shit later this is for debugging purposes only
-//        TitleCard titleCard = new TitleCard();
-//        titleCard.setLocation(titleCard.getWidth(), 320);
-//
-//        add(titleCard);
     }
 }
