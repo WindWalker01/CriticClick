@@ -28,23 +28,41 @@ public class Home extends CriticPage {
         search.setFont(new Font("Arial", Font.BOLD, 14));
         search.setEditable(true);
         search.setBackground(Color.WHITE);
+
+        // Custom rounded border
+        search.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(Color.GRAY, 2), // gray border
+                BorderFactory.createEmptyBorder(0, 10, 0, 10) // internal padding
+        ));
+
+        // Custom rounded UI
+        search.setUI(new javax.swing.plaf.basic.BasicTextFieldUI() {
+            @Override
+            public void paintSafely(Graphics g) {
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2d.setColor(Color.WHITE);
+                g2d.fillRoundRect(0, 0, search.getWidth(), search.getHeight(), 20, 20);  // Rounded corners
+                super.paintSafely(g); // Continue normal painting after the custom background
+            }
+        });
+
         search.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
                 search.selectAll();
             }
         });
+
         search.addActionListener(new ActionListener() {
-           @Override
-           public void actionPerformed(ActionEvent e) {
-               if(!search.getText().equals("")) {
-                   MovieRequest.getMoviesByName(search.getText());
-                   window.changePage(Page.Search);
-
-               }
-           }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!search.getText().equals("")) {
+                    MovieRequest.getMoviesByName(search.getText());
+                    window.changePage(Page.Search);
+                }
+            }
         });
-
 
 
         JLabel popularFilms = new JLabel("POPULAR FILMS THIS WEEK");
@@ -55,7 +73,7 @@ public class Home extends CriticPage {
         moreFilms.setBounds(140,0,100,100);
         moreFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
-      MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movies, 5, window);
+        MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movies, 5, window);
         popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
 
         //spacer
@@ -102,7 +120,6 @@ public class Home extends CriticPage {
         poster.add(popularThisWeek);
 
         // Create the JScrollPane
-
         scrollPane = new JScrollPane(poster);
         scrollPane.setBounds(0, 65, 1270, 720);
         scrollPane.setBackground(LIGHT_BEIGE);
@@ -114,8 +131,7 @@ public class Home extends CriticPage {
         add(new TitleBar(window));
         add(scrollPane);
 
-
-        // action listeners
+        // Action listeners for focus events
         search.addFocusListener(new FocusAdapter() {
             public void focusGained(FocusEvent e) {
                 if (search.getText().equals("Search")) {
@@ -142,16 +158,5 @@ public class Home extends CriticPage {
             }
         });
 
-        moreFilms.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                window.changePage(Page.More);
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                moreFilms.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            }
-        });
     }
 }

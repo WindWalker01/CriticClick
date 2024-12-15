@@ -58,11 +58,11 @@ public class TitleCard extends JPanel {
         // Add poster or default image
         if (!movie.posterPath.equals("null")) {
             poster = new WebImage("https://image.tmdb.org/t/p/w154" + movie.posterPath);
-            poster.setBounds(13, 5, 150, 231); // Adjusted bounds to fit panel
+            poster.setBounds(14, 10, 150, 231); // Adjusted bounds to fit panel
             add(poster);
         } else {
             JLabel defaultImage = new JLabel(new ImageIcon("src/main/resources/defaultPoster-small.png"));
-            defaultImage.setBounds(13, 5, 150, 231);
+            defaultImage.setBounds(15, 10, 150, 231);
             add(defaultImage);
         }
 
@@ -130,7 +130,7 @@ public class TitleCard extends JPanel {
 
         // If you want to add a border with rounded corners
         g2d.setColor(CriticPage.LIGHT_BEIGE);
-        g2d.setStroke(new BasicStroke(4));  // Set border thickness
+        g2d.setStroke(new BasicStroke(10));  // Set border thickness
         g2d.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 20, 20);  // Border with rounded corners
     }
 
