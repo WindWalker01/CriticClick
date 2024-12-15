@@ -1,16 +1,16 @@
 package org.example.components;
 
 
+import org.example.data.UserData;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class ProfileBar extends JPanel {
 
 
-    private JLabel title;
+    public JLabel title;
     private JLabel user;
-
-
 
     public ProfileBar() {
         setBackground(new Color(0x756565));
@@ -18,7 +18,7 @@ public class ProfileBar extends JPanel {
         setSize(new Dimension(1280, 200));
 
 
-        title = new JLabel("Juan Dela Cruz");
+        title = new JLabel("");
         user = new JLabel(new ImageIcon("src/main/resources/big-Avatar.png"));
 
         title.setBounds(new Rectangle(200, 66, 300, 64));
