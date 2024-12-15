@@ -1,6 +1,7 @@
 package org.example.pages;
 
 import org.example.CriticWindow;
+import org.example.Page;
 import org.example.components.MovieTitleHolder;
 import org.example.components.TitleBar;
 import org.example.components.TitleCard;
@@ -9,6 +10,8 @@ import org.example.data.MovieRequest;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.ArrayList;
@@ -49,6 +52,16 @@ public class Searched extends CriticPage {
             @Override
             public void focusGained(FocusEvent e) {
                 search.selectAll();
+            }
+        });
+        search.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!search.getText().equals("")) {
+                    MovieRequest.getMoviesByName(search.getText());
+                    window.changePage(Page.Search);
+
+                }
             }
         });
 

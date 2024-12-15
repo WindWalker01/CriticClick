@@ -139,6 +139,8 @@ public class Poster extends CriticPage implements ActionListener {
                     g2d.dispose();
                 }
             };
+        }else{
+            bg = new JLabel(new ImageIcon("src/main/resources/defaultBackdrop.png"));
         }
 
 
@@ -176,7 +178,7 @@ public class Poster extends CriticPage implements ActionListener {
         add(search);
         add(searchTf);
         add(new TitleBar(window));
-       // add(background);
+//        add(background);
         add(desc);
         add(bg);
 
