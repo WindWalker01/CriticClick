@@ -10,6 +10,8 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.font.TextAttribute;
+import java.text.AttributedString;
 import java.util.ArrayList;
 
 public class Home extends CriticPage {

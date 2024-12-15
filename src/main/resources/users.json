@@ -11,5 +11,29 @@
     "id" : 912649,
     "comments" : "asd",
     "rating" : 2
+  }, {
+    "title" : "Inception",
+    "id" : 27205,
+    "comments" : "ey so gud",
+    "rating" : 4
+  }, {
+    "title" : "Inception: The Cobol Job",
+    "id" : 64956,
+    "comments" : "wa",
+    "rating" : 1
+  } ]
+}, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, {
+  "username" : "ruzzel",
+  "password" : "1234",
+  "movies" : [ {
+    "title" : "Red One",
+    "id" : 845781,
+    "comments" : "waw",
+    "rating" : 2
+  }, {
+    "title" : "Venom: The Last Dance",
+    "id" : 912649,
+    "comments" : "asd",
+    "rating" : 2
   } ]
 } ]

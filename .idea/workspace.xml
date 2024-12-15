@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="nagerror pero naayos na">
+    <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="finix halos lahat ng bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/TitleCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dsa/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dsa/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/More.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/More.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Poster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Poster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Searched.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Searched.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +133,7 @@
       <workItem from="1733972877562" duration="4488000" />
       <workItem from="1733984297562" duration="3439000" />
       <workItem from="1733987882567" duration="321000" />
-      <workItem from="1734286774575" duration="3382000" />
+      <workItem from="1734286774575" duration="6831000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <option name="closed" value="true" />
@@ -152,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734282051805</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finix halos lahat ng bugs">
+      <option name="closed" value="true" />
+      <created>1734290338312</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734290338312</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +168,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="last" />
     <MESSAGE value="nagerror pero naayos na" />
-    <option name="LAST_COMMIT_MESSAGE" value="nagerror pero naayos na" />
+    <MESSAGE value="finix halos lahat ng bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="finix halos lahat ng bugs" />
   </component>
 </project>

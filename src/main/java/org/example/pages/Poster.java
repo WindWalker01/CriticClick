@@ -151,18 +151,18 @@ public class Poster extends CriticPage implements ActionListener {
         rate = new JLabel("Rate this Movie");
         rate.setForeground(Color.BLACK);
         rate.setFont(new Font("Roboto", Font.BOLD, 18));
-        rate.setBounds(310, 500, 200, 60);
+        rate.setBounds(350, 500, 200, 60);
 
         // Message text field
         message = new JTextField();
         message.setForeground(Color.BLACK);
         message.setFont(new Font("Arial", Font.PLAIN, 18));
         message.setEditable(true);
-        message.setBounds(310, 545, 600, 80);
+        message.setBounds(350, 545, 600, 80);
 
         // Submit button
         submit = new JButton("Submit");
-        submit.setBounds(825, 630, 76, 35);
+        submit.setBounds(875, 630, 76, 35);
         submit.setFont(new Font("Arial", Font.BOLD, 10));
         submit.setForeground(Color.WHITE);
         submit.setBackground(Color.BLACK);
@@ -174,8 +174,8 @@ public class Poster extends CriticPage implements ActionListener {
         searchTf.setForeground(Color.BLACK);
         searchTf.setFont(new Font("Arial", Font.PLAIN, 18));
         searchTf.setEditable(true);
-        searchTf.setBounds(600, 20, 200, 30);
-        searchTf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        searchTf.setBounds(560, 10, 230, 40);
+        searchTf.setBorder(BorderFactory.createLineBorder(LIGHT_BEIGE));
         searchTf.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -193,13 +193,13 @@ public class Poster extends CriticPage implements ActionListener {
         search = new JLabel("Search");
         search.setForeground(Color.WHITE);
         search.setFont(new Font("Arial", Font.BOLD, 13));
-        search.setBounds(550, 18, 100, 30);
+        search.setBounds(500, 18, 100, 30);
 
         // Star rating dropdown
         String[] star = {"Rate", "1 - Bad", "2 - Poor", "3 - Fair", "4 - Very Good", "5 - Excellent"};
         starRate = new JComboBox<>(star);
         starRate.setFont(new Font("Arial", Font.BOLD, 14));
-        starRate.setBounds(709, 520, 200, 20);
+        starRate.setBounds(749, 520, 200, 20);
         starRate.setFocusable(false);
         starRate.setBackground(Color.WHITE);
         starRate.addActionListener(e -> currentRating = (String) starRate.getSelectedItem());
@@ -211,8 +211,6 @@ public class Poster extends CriticPage implements ActionListener {
                 starRate.setSelectedIndex(data.getRating());
             }
         }
-
-        // Add components to the panel
 
         add(starRate);
         add(message);
@@ -232,5 +230,7 @@ public class Poster extends CriticPage implements ActionListener {
         add(searchTf);
         add(new TitleBar(window));
         add(background);
+
+
     }
 }
