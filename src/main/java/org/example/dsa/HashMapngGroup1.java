@@ -20,7 +20,6 @@ public class HashMapngGroup1<K, V> {
         }
     }
 
-
     private int size = 7;
     private Node[] dataMap;
 

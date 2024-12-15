@@ -6,7 +6,8 @@ import org.example.components.primitives.WebImage;
 import org.example.data.MovieRequest;
 import org.example.data.StateManager;
 import org.example.data.UserData;
-
+import java.net.URI;
+import java.net.URISyntaxException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -96,6 +97,18 @@ public class Poster extends CriticPage implements ActionListener {
         play.setFocusable(false);
         play.setBounds(350, 320 ,150,40);
         play.addActionListener(this);
+
+        play.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    // Open the YouTube URL in the default web browser
+                    Desktop.getDesktop().browse(new URI("https://www.youtube.com"));
+                } catch (Exception ex) {
+
+                }
+            }
+        });
 
         back = new JButton("Back");
         back.setBounds(1100, 100, 76, 35);
