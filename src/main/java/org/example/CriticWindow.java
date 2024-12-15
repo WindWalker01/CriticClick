@@ -30,8 +30,9 @@ public class CriticWindow extends JFrame {
         addPage(Page.Profile, new Profile(this));
         addPage(Page.Loading, new Loading(this));
         addPage(Page.More, new More(this));
+        addPage(Page.Login, new Login(this));
 
-        changePage(Page.More);
+        changePage(Page.Login);
     }
 
 
