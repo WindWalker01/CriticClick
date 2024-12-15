@@ -1,5 +1,6 @@
 package org.example.pages;
 import org.example.CriticWindow;
+import org.example.Page;
 import org.example.components.TitleBar;
 import org.example.components.primitives.WebImage;
 import org.example.data.StateManager;
@@ -23,13 +24,15 @@ public class Poster extends CriticPage implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource() == back) {
+            window.changePage(Page.Home);
+        }
     }
 
     @Override
     public void reloadPage() {
         removeAll();
-        setBackground(CriticWindow.LIGHT_BEIGE);
+        setBackground(LIGHT_BEIGE);
 
 
         WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.posterPath);
@@ -127,5 +130,9 @@ public class Poster extends CriticPage implements ActionListener {
         add(new TitleBar(window));
 
         add(bg);
+
     }
+
+
+
 }

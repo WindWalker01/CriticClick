@@ -57,6 +57,8 @@ public class Profile extends CriticPage implements ActionListener {
 
         if(e.getSource() == Back) {
             window.changePage(Page.Home);
+        }else if(e.getSource() == Logout) {
+            window.changePage(Page.MainPage);
         }
 
     }
