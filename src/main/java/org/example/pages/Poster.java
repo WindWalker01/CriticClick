@@ -1,5 +1,6 @@
 package org.example.pages;
 import org.example.CriticWindow;
+import org.example.Page;
 import org.example.components.TitleBar;
 import org.example.components.primitives.WebImage;
 import org.example.data.StateManager;
@@ -25,7 +26,9 @@ public class Poster extends CriticPage implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == back) {
+            window.changePage(Page.Home);
+        }
     }
 
     @Override
@@ -118,13 +121,6 @@ public class Poster extends CriticPage implements ActionListener {
             }
         };
         bg.setBounds(0, 0, window.getWidth(), window.getHeight()-220);
-
-
-
-
-
-
-
 
         add(message);
         add(back);
