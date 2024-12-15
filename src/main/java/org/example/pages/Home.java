@@ -145,12 +145,13 @@ public class Home extends CriticPage {
             }
         });
 
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                window.changePage(Page.Create);
-            }
-        });
+        //eto yung nakakagulo pala
+//        addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                window.changePage(Page.Create);
+//            }
+//        });
 
         // TODO: remove this shit later this is for debugging purposes only
 //        TitleCard titleCard = new TitleCard();

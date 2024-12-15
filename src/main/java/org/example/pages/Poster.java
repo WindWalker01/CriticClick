@@ -1,10 +1,130 @@
 package org.example.pages;
+import org.example.CriticWindow;
+import org.example.components.TitleBar;
+import org.example.components.primitives.WebImage;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Poster extends CriticPage implements ActionListener {
+
+     JLabel title, year, rate, synopsis, bg, poster, search;
+     JButton back, play, submit;
+     JTextField message, searchTf;
+
+    public Poster(CriticWindow window) {
+
+        setBackground(CriticWindow.LIGHT_BEIGE);
 
 
-public class Poster extends CriticPage {
+        WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342/aosm8NMQ3UyoBVpSxyimorCQykC.jpg");
+        ImageIcon originalIcon = (ImageIcon) webImage.getIcon();
+        Image resizedImage = originalIcon.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
+        poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
+        poster.setBounds(100, 150, 170,250);
+
+        title = new JLabel("Moana");
+        title.setForeground(Color.BLACK);
+        title.setFont(new Font("Arial", Font.BOLD, 48));
+        title.setBounds(290,-50,1000,500);
+
+        this.year = new JLabel("(Year)");
+        year.setForeground(Color.BLACK);
+        year.setFont(new Font("Arial", Font.BOLD, 38));
+        year.setBounds(450,-50 ,1000,500);
+
+        synopsis = new JLabel("Synopsis");
+        synopsis.setForeground(Color.BLACK);
+        synopsis.setFont(new Font("Arial", Font.PLAIN, 18));
+        synopsis.setBounds(300,0 ,1000,500);
+
+        play = new JButton("Play Trailer");
+        play.setFont(new Font("Arial", Font.BOLD, 10));
+        play.setForeground(Color.WHITE);
+        play.setBackground(Color.BLACK);
+        play.setFocusable(false);
+        play.setBounds(300, 360 ,100,20);
+        play.addActionListener(this);
+
+        back = new JButton("Back");
+        back.setBounds(1100, 100, 76, 35);
+        back.setFont(new Font("Arial", Font.BOLD, 10));
+        back.setForeground(Color.WHITE);
+        back.setBackground(Color.BLACK);
+        back.setFocusable(false);
+        back.addActionListener(this);
+
+        rate = new JLabel("Rate this Movie");
+        rate.setForeground(Color.BLACK);
+        rate.setFont(new Font("Roboto", Font.BOLD, 18));
+        rate.setBounds(310, 500, 200, 60);
+
+        message = new JTextField();
+        message.setForeground(Color.BLACK);
+        message.setFont(new Font("Arial", Font.PLAIN, 18));
+        message.setEditable(true);
+        message.setBounds(310,545,600, 80);
+
+        submit = new JButton("Submit");
+        submit.setBounds(825, 630, 76, 35);
+        submit.setFont(new Font("Arial", Font.BOLD, 10));
+        submit.setForeground(Color.WHITE);
+        submit.setBackground(Color.BLACK);
+        submit.setFocusable(false);
+        submit.addActionListener(this);
+
+        searchTf = new JTextField();
+        searchTf.setForeground(Color.BLACK);
+        searchTf.setFont(new Font("Arial", Font.PLAIN, 18));
+        searchTf.setEditable(true);
+        searchTf.setBounds(600,20,200, 25);
+
+        search = new JLabel("Search");
+        search.setForeground(Color.WHITE);
+        search.setFont(new Font("Arial", Font.BOLD, 12));
+        search.setBounds(550,18,100, 30);
 
 
-    public Poster(){
+        bg = new JLabel(new ImageIcon("src/main/resources/poster test.png")){
+            @Override
+            protected void paintComponent(Graphics g) {
+            Graphics2D g2d = (Graphics2D) g.create();
+            // Set transparency (50%)
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+            super.paintComponent(g2d);
+            g2d.dispose();
+            }
+        };
+        bg.setBounds(0,0,1280, 500);
+
+
+
+
+
+
+
+
+
+        add(message);
+        add(back);
+        add(submit);
+        add(play);
+        add(synopsis);
+        add(title);
+        add(year);
+        add(rate);
+        add(poster);
+        add(search);
+        add(searchTf);
+        add(new TitleBar(window));
+
+        add(bg);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
     }
 }
