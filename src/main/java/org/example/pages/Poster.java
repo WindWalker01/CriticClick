@@ -2,6 +2,8 @@ package org.example.pages;
 import org.example.CriticWindow;
 import org.example.components.TitleBar;
 import org.example.components.primitives.WebImage;
+import org.example.data.StateManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,28 +15,40 @@ public class Poster extends CriticPage implements ActionListener {
      JButton back, play, submit;
      JTextField message, searchTf;
 
-    public Poster(CriticWindow window) {
+     private CriticWindow window;
 
+    public Poster(CriticWindow window) {
+        this.window = window;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+
+    @Override
+    public void reloadPage() {
+        removeAll();
         setBackground(CriticWindow.LIGHT_BEIGE);
 
 
-        WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342/aosm8NMQ3UyoBVpSxyimorCQykC.jpg");
+        WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.posterPath);
         ImageIcon originalIcon = (ImageIcon) webImage.getIcon();
         Image resizedImage = originalIcon.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
         poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
         poster.setBounds(100, 150, 170,250);
 
-        title = new JLabel("Moana");
+        title = new JLabel(StateManager.currentMoviePoster.title);
         title.setForeground(Color.BLACK);
         title.setFont(new Font("Arial", Font.BOLD, 48));
         title.setBounds(290,-50,1000,500);
 
-        this.year = new JLabel("(Year)");
+        this.year = new JLabel(StateManager.currentMoviePoster.year.substring(0, 4));
         year.setForeground(Color.BLACK);
         year.setFont(new Font("Arial", Font.BOLD, 38));
         year.setBounds(450,-50 ,1000,500);
 
-        synopsis = new JLabel("Synopsis");
+        synopsis = new JLabel(StateManager.currentMoviePoster.overview);
         synopsis.setForeground(Color.BLACK);
         synopsis.setFont(new Font("Arial", Font.PLAIN, 18));
         synopsis.setBounds(300,0 ,1000,500);
@@ -79,6 +93,7 @@ public class Poster extends CriticPage implements ActionListener {
         searchTf.setFont(new Font("Arial", Font.PLAIN, 18));
         searchTf.setEditable(true);
         searchTf.setBounds(600,20,200, 25);
+        searchTf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
         search = new JLabel("Search");
         search.setForeground(Color.WHITE);
@@ -86,25 +101,17 @@ public class Poster extends CriticPage implements ActionListener {
         search.setBounds(550,18,100, 30);
 
 
-        bg = new JLabel(new ImageIcon("src/main/resources/poster test.png")){
+        bg = new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.backdropPath){
             @Override
             protected void paintComponent(Graphics g) {
-            Graphics2D g2d = (Graphics2D) g.create();
-            // Set transparency (50%)
-            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
-            super.paintComponent(g2d);
-            g2d.dispose();
+                Graphics2D g2d = (Graphics2D) g.create();
+                // Set transparency (50%)
+                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+                super.paintComponent(g2d);
+                g2d.dispose();
             }
         };
         bg.setBounds(0,0,1280, 500);
-
-
-
-
-
-
-
-
 
         add(message);
         add(back);
@@ -120,11 +127,5 @@ public class Poster extends CriticPage implements ActionListener {
         add(new TitleBar(window));
 
         add(bg);
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 }

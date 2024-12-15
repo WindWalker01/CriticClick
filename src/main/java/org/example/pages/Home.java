@@ -61,7 +61,7 @@ public class Home extends CriticPage {
         moreFilms.setBounds(140,0,100,100);
         moreFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
-      MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movies, 5);
+      MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movies, 5, window);
         popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
 
         //spacer

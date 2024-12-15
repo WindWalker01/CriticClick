@@ -24,14 +24,17 @@ public class More extends CriticPage {
     public JButton back;
     public JButton next;
 
+    private CriticWindow window;
+
     private ArrayList<TitleCard> titleCards = new ArrayList<>();
 
     public More(CriticWindow window) {
+        this.window = window;
 
         JLabel browse = new JLabel("BROWSE BY");
         browse.setFont(new Font("Arial", Font.BOLD, 14));
 
-        MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movieMap.get("Default"), 20);
+        MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movieMap.get("Default"), 20, window);
         popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
 
 
@@ -199,7 +202,7 @@ public class More extends CriticPage {
     public void reloadPage() {
         ArrayList<Movie> movies = MovieRequest.movies;
         for (Movie movie : movies){
-            titleCards.add(new TitleCard(movie));
+            titleCards.add(new TitleCard(movie, window));
         }
     }
 }

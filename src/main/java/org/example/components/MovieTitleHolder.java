@@ -10,13 +10,16 @@ import java.util.ArrayList;
 
 public class MovieTitleHolder extends JPanel {
 
-    public MovieTitleHolder(ArrayList<Movie> movies, int limit){
+    private CriticWindow window;
+
+    public MovieTitleHolder(ArrayList<Movie> movies, int limit, CriticWindow window) {
+        this.window = window;
         setLayout(new FlowLayout(FlowLayout.CENTER, 30, 10));
         setSize(900, 265);
         setPreferredSize(new Dimension(900, 265));
 
         for (int j = 0; j < limit; j++) {
-            TitleCard titleCard = new TitleCard(movies.get(j));
+            TitleCard titleCard = new TitleCard(movies.get(j),window );
             titleCard.setPreferredSize(new Dimension(150, 300));
             add(titleCard);
             setBackground(CriticPage.LIGHT_BEIGE);
@@ -28,7 +31,7 @@ public class MovieTitleHolder extends JPanel {
         removeAll();
 
         for (Movie movie : movies) {
-            TitleCard titleCard = new TitleCard(movie);
+            TitleCard titleCard = new TitleCard(movie, window);
             titleCard.setPreferredSize(new Dimension(150, 300));
             add(titleCard);
             setBackground(CriticPage.LIGHT_BEIGE);
