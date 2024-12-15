@@ -34,8 +34,8 @@ public class Loading extends CriticPage implements ActionListener {
     //timer
     private void startTimer() {
         if (timer == null || !timer.isRunning()) {
-            timer = new Timer(2500, this);
-            timer.setRepeats(false);
+            timer = new Timer(5000, this);
+            timer.setRepeats(true);
             timer.start();
         }
     }
@@ -49,5 +49,10 @@ public class Loading extends CriticPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         window.changePage(Page.Home);
+    }
+
+    @Override
+    public void reloadPage() {
+        stopTimer();
     }
 }

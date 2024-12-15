@@ -16,6 +16,9 @@ public class CriticWindow extends JFrame {
 
 
     public CriticWindow(){
+        addPage(Page.Loading, new Loading(this));
+//        changePage(Page.Loading);
+
         setLayout(null);
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setLocationRelativeTo(null);
@@ -28,7 +31,6 @@ public class CriticWindow extends JFrame {
         addPage(Page.Create, new Create(this));
         addPage(Page.MainPage, new MainPage(this));
         addPage(Page.Profile, new Profile(this));
-        addPage(Page.Loading, new Loading(this));
         addPage(Page.More, new More(this));
         addPage(Page.Login, new Login(this));
         addPage(Page.Poster, new Poster(this));
@@ -50,7 +52,6 @@ public class CriticWindow extends JFrame {
             if(set.key == desiredPage){
                 set.value.reloadPage();
                 set.value.setVisible(true);
-                System.out.println(desiredPage);
             }else{
                 set.value.setVisible(false);
             }

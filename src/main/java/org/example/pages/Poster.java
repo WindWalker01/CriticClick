@@ -14,7 +14,7 @@ import java.awt.event.ComponentEvent;
 
 public class Poster extends CriticPage implements ActionListener {
 
-     JLabel title, year, rate, synopsis, bg, poster, search;
+     JLabel title, rate, synopsis, bg, poster, search;
      JButton back, play, submit;
      JTextField message, searchTf;
 
@@ -43,15 +43,12 @@ public class Poster extends CriticPage implements ActionListener {
         poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
         poster.setBounds(100, 150, 170,250);
 
-        title = new JLabel(StateManager.currentMoviePoster.title);
+        title = new JLabel(StateManager.currentMoviePoster.title + " (" + StateManager.currentMoviePoster.year.substring(0, 4) + ")");
         title.setForeground(Color.BLACK);
         title.setFont(new Font("Arial", Font.BOLD, 48));
         title.setBounds(290,-50,1000,500);
 
-        this.year = new JLabel(StateManager.currentMoviePoster.year.substring(0, 4));
-        year.setForeground(Color.BLACK);
-        year.setFont(new Font("Arial", Font.BOLD, 38));
-        year.setBounds(450,-50 ,1000,500);
+
 
         synopsis = new JLabel(StateManager.currentMoviePoster.overview);
         synopsis.setForeground(Color.BLACK);
@@ -128,7 +125,6 @@ public class Poster extends CriticPage implements ActionListener {
         add(play);
         add(synopsis);
         add(title);
-        add(year);
         add(rate);
         add(poster);
         add(search);
