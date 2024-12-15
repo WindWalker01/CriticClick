@@ -5,13 +5,12 @@ import org.example.Page;
 import org.example.components.MovieTitleHolder;
 import org.example.components.TitleBar;
 import org.example.data.MovieRequest;
+import org.example.data.StateManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Home extends CriticPage {
     private final JTextField search;
@@ -35,6 +34,18 @@ public class Home extends CriticPage {
                 search.selectAll();
             }
         });
+        search.addActionListener(new ActionListener() {
+           @Override
+           public void actionPerformed(ActionEvent e) {
+               if(!search.getText().equals("")) {
+                   MovieRequest.getMoviesByName(search.getText());
+                   window.changePage(Page.Search);
+
+               }
+           }
+        });
+
+
 
         JLabel popularFilms = new JLabel("POPULAR FILMS THIS WEEK");
         popularFilms.setBounds(50,0,300,100);
