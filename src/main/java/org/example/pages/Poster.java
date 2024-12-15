@@ -13,11 +13,13 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
 public class Poster extends CriticPage implements ActionListener {
-
-     JLabel title, rate, synopsis, bg, poster, search;
+     JPanel desc;
+     JLabel title, rate, bg, poster, search;
+     JTextArea synopsis;
+     JPanel background;
      JButton back, play, submit;
      JTextField message, searchTf;
-
+     JComboBox <String> starRate;
      private CriticWindow window;
 
     public Poster(CriticWindow window) {
@@ -36,31 +38,41 @@ public class Poster extends CriticPage implements ActionListener {
         removeAll();
         setBackground(LIGHT_BEIGE);
 
+        desc = new JPanel();
+        desc.setBounds(350,200,600,200);
+        desc.setLayout(new FlowLayout(FlowLayout.LEFT));
+        desc.setOpaque(false);
+
+//        background = new JPanel();
+//        background.setBounds(0,60,1270,440);
+//        background.setLayout(null);
 
         WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.posterPath);
         ImageIcon originalIcon = (ImageIcon) webImage.getIcon();
-        Image resizedImage = originalIcon.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
+        Image resizedImage = originalIcon.getImage().getScaledInstance(250, 350, Image.SCALE_SMOOTH);
         poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
-        poster.setBounds(100, 150, 170,250);
+        poster.setBounds(70, 100, 230,350);
 
         title = new JLabel(StateManager.currentMoviePoster.title + " (" + StateManager.currentMoviePoster.year.substring(0, 4) + ")");
         title.setForeground(Color.BLACK);
         title.setFont(new Font("Arial", Font.BOLD, 48));
-        title.setBounds(290,-50,1000,500);
+        title.setBounds(350,-80,1000,500);
 
-
-
-        synopsis = new JLabel(StateManager.currentMoviePoster.overview);
+        synopsis = new JTextArea(StateManager.currentMoviePoster.overview);
         synopsis.setForeground(Color.BLACK);
-        synopsis.setFont(new Font("Arial", Font.PLAIN, 18));
-        synopsis.setBounds(300,0 ,1000,500);
+        synopsis.setFont(new Font("Arial", Font.ITALIC, 16));
+        synopsis.setWrapStyleWord(true);
+        synopsis.setLineWrap(true);
+        synopsis.setOpaque(false);
+        synopsis.setEditable(false);
+        synopsis.setPreferredSize(new Dimension(600, 180));
 
         play = new JButton("Play Trailer");
-        play.setFont(new Font("Arial", Font.BOLD, 10));
+        play.setFont(new Font("Arial", Font.BOLD, 13));
         play.setForeground(Color.WHITE);
         play.setBackground(Color.BLACK);
         play.setFocusable(false);
-        play.setBounds(300, 360 ,100,20);
+        play.setBounds(350, 320 ,150,40);
         play.addActionListener(this);
 
         back = new JButton("Back");
@@ -119,17 +131,39 @@ public class Poster extends CriticPage implements ActionListener {
         };
         bg.setBounds(0, 0, window.getWidth(), window.getHeight()-220);
 
+        String[] star = { "Rate", "1 - Bad", "2 - Poor", "3 - Fair", "4 - Very Good", "5 - Excellent" };
+        starRate = new JComboBox<>(star);
+        starRate.setFont(new Font("Arial", Font.BOLD, 14));
+        starRate.setPreferredSize(new Dimension(200, 40));
+        starRate.setBounds(709, 520, 200, 20);
+        starRate.setFocusable(false);
+        starRate.setBackground(Color.WHITE);
+        starRate.addActionListener(e -> {
+            String selectedGenre = (String) starRate.getSelectedItem();
+            System.out.println("Selected genre: " + selectedGenre);
+        });
+        starRate.setBackground(CriticWindow.LIGHT_BEIGE);
+        starRate.setFont(new Font("Arial", Font.BOLD, 14));
+        starRate.setFocusable(false);
+
+
+
+        add(starRate);
+
         add(message);
         add(back);
         add(submit);
         add(play);
-        add(synopsis);
+        desc.add(synopsis, FlowLayout.LEFT);
+        add(desc);
         add(title);
         add(rate);
         add(poster);
         add(search);
         add(searchTf);
         add(new TitleBar(window));
+       // add(background);
+        add(desc);
         add(bg);
 
     }
