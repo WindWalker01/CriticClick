@@ -4,7 +4,7 @@ import org.example.CriticWindow;
 import org.example.Page;
 import org.example.components.MovieTitleHolder;
 import org.example.components.TitleBar;
-import org.example.components.TitleCard;
+import org.example.data.MovieRequest;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,18 +20,6 @@ public class Home extends CriticPage {
     public JScrollPane scrollPane;
 
     public Home(CriticWindow window) {
-
-        TitleCard[] titleCards = new TitleCard[] {
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-
-
-        };
-
         JLabel browse = new JLabel("BROWSE BY");
         browse.setFont(new Font("Arial", Font.BOLD, 14));
 
@@ -73,7 +61,7 @@ public class Home extends CriticPage {
         moreFilms.setBounds(140,0,100,100);
         moreFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
-      MovieTitleHolder popularThisWeek = new MovieTitleHolder(titleCards);
+      MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movies, 5);
         popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
 
         //spacer

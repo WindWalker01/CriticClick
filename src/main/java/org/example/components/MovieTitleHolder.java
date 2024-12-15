@@ -1,25 +1,40 @@
 package org.example.components;
 
 import org.example.CriticWindow;
+import org.example.data.Movie;
 import org.example.pages.CriticPage;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class MovieTitleHolder extends JPanel {
 
-    public MovieTitleHolder(TitleCard[] titleCards){
+    public MovieTitleHolder(ArrayList<Movie> movies, int limit){
         setLayout(new FlowLayout(FlowLayout.CENTER, 30, 10));
         setSize(900, 265);
         setPreferredSize(new Dimension(900, 265));
 
-        for(TitleCard titleCard : titleCards){
+        for (int j = 0; j < limit; j++) {
+            TitleCard titleCard = new TitleCard(movies.get(j));
             titleCard.setPreferredSize(new Dimension(150, 300));
             add(titleCard);
             setBackground(CriticPage.LIGHT_BEIGE);
-
         }
 
+    }
+
+    public void updateTitleCards(ArrayList<Movie> movies){
+        removeAll();
+
+        for (Movie movie : movies) {
+            TitleCard titleCard = new TitleCard(movie);
+            titleCard.setPreferredSize(new Dimension(150, 300));
+            add(titleCard);
+            setBackground(CriticPage.LIGHT_BEIGE);
+        }
+
+        repaint();
     }
 
 }

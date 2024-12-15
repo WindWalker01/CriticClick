@@ -5,12 +5,16 @@ import org.example.Page;
 import org.example.components.MovieTitleHolder;
 import org.example.components.TitleBar;
 import org.example.components.TitleCard;
+import org.example.data.Movie;
+import org.example.data.MovieRequest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class More extends CriticPage {
 
@@ -20,33 +24,18 @@ public class More extends CriticPage {
     public JButton back;
     public JButton next;
 
-    public More(CriticWindow window) {
+    private ArrayList<TitleCard> titleCards = new ArrayList<>();
 
-        TitleCard[] titleCards = new TitleCard[]{
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-                new TitleCard(),
-        };
+    public More(CriticWindow window) {
 
         JLabel browse = new JLabel("BROWSE BY");
         browse.setFont(new Font("Arial", Font.BOLD, 14));
 
-        String[] genres = {"Select Genre", "Action", "Adventure", "Drama", "Sci-Fi"};
+        MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movieMap.get("Default"), 20);
+        popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
+
+
+        String[] genres = {"Select Genre", "Action", "Adventure", "Drama", "Science Fiction"};
         genreComboBox = new JComboBox<>(genres);
         genreComboBox.setFont(new Font("Arial", Font.BOLD, 14));
         genreComboBox.setPreferredSize(new Dimension(200, 40));
@@ -55,7 +44,28 @@ public class More extends CriticPage {
         genreComboBox.setBackground(Color.WHITE);
         genreComboBox.addActionListener(e -> {
             String selectedGenre = (String) genreComboBox.getSelectedItem();
+
+
+            switch (selectedGenre) {
+                case "Select Genre":
+                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Default"));
+                    break;
+                case "Action":
+                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Action"));
+                    break;
+                case "Adventure":
+                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Adventure"));
+                    break;
+                case "Drama":
+                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Drama"));
+                    break;
+                case "Science Fiction":
+                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Science Fiction"));
+                    break;
+            }
+
             System.out.println("Selected genre: " + selectedGenre);
+            repaint();
         });
 
         JLabel findFilm = new JLabel("FIND A FILM");
@@ -81,8 +91,7 @@ public class More extends CriticPage {
         popularFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
 
-        MovieTitleHolder popularThisWeek = new MovieTitleHolder(titleCards);
-        popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
+
 
         //spacer
         JPanel spacerUp = new JPanel();
@@ -184,10 +193,13 @@ public class More extends CriticPage {
             }
         });
 
-        // TODO: remove this shit later this is for debugging purposes only
-//        TitleCard titleCard = new TitleCard();
-//        titleCard.setLocation(titleCard.getWidth(), 320);
-//
-//        add(titleCard);
+    }
+
+    @Override
+    public void reloadPage() {
+        ArrayList<Movie> movies = MovieRequest.movies;
+        for (Movie movie : movies){
+            titleCards.add(new TitleCard(movie));
+        }
     }
 }

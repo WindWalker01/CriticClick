@@ -22,7 +22,7 @@ public class MainPage extends CriticPage implements ActionListener {
 
 
     public MainPage(CriticWindow window) {
-    this.window = window;
+        this.window = window;
         createButton = new JButton("Create Account");
         createButton.setFont(new Font("Arial", Font.BOLD, 14));
         createButton.setBounds(350, 430, 260, 50);
