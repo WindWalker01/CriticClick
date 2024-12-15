@@ -7,8 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CriticWindow extends JFrame {
-
-    public static final Color LIGHT_BEIGE = new Color(229, 225, 218)  ;
     private final int WINDOW_WIDTH = 1280;
     private final int WINDOW_HEIGHT = 720;
 
@@ -32,7 +30,7 @@ public class CriticWindow extends JFrame {
         addPage(Page.More, new More(this));
         addPage(Page.Login, new Login(this));
 
-        changePage(Page.Login);
+        changePage(Page.MainPage);
     }
 
 

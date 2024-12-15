@@ -3,6 +3,7 @@ package org.example.components;
 import org.example.CriticWindow;
 import org.example.components.primitives.WebImage;
 import org.example.data.Movie;
+import org.example.pages.CriticPage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,7 @@ public class TitleCard extends JPanel {
     public TitleCard(Movie movie) {
         setLayout(null);
         setSize(154,265);
-        setBackground(CriticWindow.LIGHT_BEIGE);
+        setBackground(CriticPage.LIGHT_BEIGE);
 
         poster = new WebImage("https://image.tmdb.org/t/p/w154" + movie.posterPath);
         poster.setBounds(5, 5, 154, 231);

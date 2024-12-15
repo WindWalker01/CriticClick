@@ -75,7 +75,7 @@ public class MainPage extends CriticPage implements ActionListener {
             window.changePage(Page.Create);
         }
         if (e.getSource() == signButton) {
-            window.changePage(Page.Home);
+            window.changePage(Page.Login);
         }
     }
 }
