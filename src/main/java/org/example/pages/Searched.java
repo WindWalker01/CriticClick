@@ -70,9 +70,6 @@ public class Searched extends CriticPage {
         popularFilms.setBounds(50, 0, 300, 100);
         popularFilms.setFont(new Font("Arial", Font.BOLD, 15));
 
-
-
-
         //spacer
         JPanel spacerUp = new JPanel();
         spacerUp.setLayout(null);
@@ -90,11 +87,9 @@ public class Searched extends CriticPage {
         up.setPreferredSize(new Dimension(1110, 50));
         up.setBackground(LIGHT_BEIGE);
 
-
         JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 30, 0));
         leftPanel.setBackground(LIGHT_BEIGE);
         leftPanel.add(browse);
-
 
         JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 30, 0));
         rightPanel.setBackground(LIGHT_BEIGE);
