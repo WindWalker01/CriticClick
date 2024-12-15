@@ -47,7 +47,7 @@ public class TitleCard extends JPanel {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-
+                setCursor(new Cursor(Cursor.HAND_CURSOR));
             }
 
             @Override

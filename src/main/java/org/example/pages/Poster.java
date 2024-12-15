@@ -34,7 +34,7 @@ public class Poster extends CriticPage implements ActionListener {
     @Override
     public void reloadPage() {
         removeAll();
-        setBackground(CriticWindow.LIGHT_BEIGE);
+        setBackground(LIGHT_BEIGE);
 
 
         WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.posterPath);
@@ -135,5 +135,9 @@ public class Poster extends CriticPage implements ActionListener {
         add(searchTf);
         add(new TitleBar(window));
         add(bg);
+
     }
+
+
+
 }

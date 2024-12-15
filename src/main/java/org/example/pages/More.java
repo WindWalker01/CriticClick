@@ -100,28 +100,28 @@ public class More extends CriticPage {
         JPanel spacerUp = new JPanel();
         spacerUp.setLayout(null);
         spacerUp.setPreferredSize(new Dimension(1050, 50));
-        spacerUp.setBackground(CriticWindow.LIGHT_BEIGE);
+        spacerUp.setBackground(LIGHT_BEIGE);
 
         JPanel spacerLow = new JPanel();
         spacerLow.setLayout(null);
         spacerLow.setPreferredSize(new Dimension(1050, 80));
-        spacerLow.setBackground(CriticWindow.LIGHT_BEIGE);
+        spacerLow.setBackground(LIGHT_BEIGE);
 
         // upper section
         JPanel up = new JPanel();
         up.setLayout(new BorderLayout());
         up.setPreferredSize(new Dimension(1110, 50));
-        up.setBackground(CriticWindow.LIGHT_BEIGE);
+        up.setBackground(LIGHT_BEIGE);
 
 
         JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 30, 0));
-        leftPanel.setBackground(CriticWindow.LIGHT_BEIGE);
+        leftPanel.setBackground(LIGHT_BEIGE);
         leftPanel.add(browse);
         leftPanel.add(genreComboBox);
 
 
         JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 30, 0));
-        rightPanel.setBackground(CriticWindow.LIGHT_BEIGE);
+        rightPanel.setBackground(LIGHT_BEIGE);
         rightPanel.add(findFilm);
         rightPanel.add(search);
 
@@ -131,7 +131,7 @@ public class More extends CriticPage {
         // lower section
         JPanel low = new JPanel();
         low.setPreferredSize(new Dimension(1050, 25));
-        low.setBackground(CriticWindow.LIGHT_BEIGE);
+        low.setBackground(LIGHT_BEIGE);
         low.setLayout(new BorderLayout());
         low.add(popularFilms, BorderLayout.WEST);
 
@@ -145,7 +145,7 @@ public class More extends CriticPage {
 
         JPanel poster = new JPanel();
         poster.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        poster.setBackground(CriticWindow.LIGHT_BEIGE);
+        poster.setBackground(LIGHT_BEIGE);
         poster.setPreferredSize(new Dimension(1200, 1500));
 
         // lowest
@@ -178,13 +178,13 @@ public class More extends CriticPage {
         search.addFocusListener(new FocusAdapter() {
             public void focusGained(FocusEvent e) {
                 if (search.getText().equals("Search")) {
-                    search.setText("");  // clear the text when the JTextField is clicked
+                    search.setText("");
                 }
             }
 
             public void focusLost(FocusEvent e) {
                 if (search.getText().equals("")) {
-                    search.setText("Search");  // restore the default text if the JTextField is empty
+                    search.setText("Search");
                 }
             }
         });
