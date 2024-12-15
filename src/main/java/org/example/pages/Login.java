@@ -136,9 +136,9 @@ public class Login extends CriticPage implements ActionListener {
             String password = String.valueOf(passwordField.getPassword());
             // Handle login logic here
             if (email.isEmpty() || password.isEmpty() || email.equals("Enter your email") || password.equals("Enter your password")) {
-                JOptionPane.showMessageDialog(this, "Please fill out all fields.", "Error", JOptionPane.ERROR_MESSAGE);
+
             } else {
-                JOptionPane.showMessageDialog(this, "Login Successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+               window.changePage(Page.Loading);
             }
         }
     }
