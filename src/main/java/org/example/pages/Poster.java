@@ -47,11 +47,20 @@ public class Poster extends CriticPage implements ActionListener {
 //        background.setBounds(0,60,1270,440);
 //        background.setLayout(null);
 
-        WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.posterPath);
-        ImageIcon originalIcon = (ImageIcon) webImage.getIcon();
-        Image resizedImage = originalIcon.getImage().getScaledInstance(250, 350, Image.SCALE_SMOOTH);
-        poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
-        poster.setBounds(70, 100, 230,350);
+
+        if(StateManager.currentMoviePoster.posterPath != "null"){
+            WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.posterPath);
+            ImageIcon originalIcon = (ImageIcon) webImage.getIcon();
+            Image resizedImage = originalIcon.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
+            poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
+        }else {
+            ImageIcon image = new ImageIcon("src/main/resources/defaultPoster-big.png");
+            Image resizedImage = image.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
+            poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
+        }
+
+        poster.setBounds(100, 150, 170,250);
+
 
         title = new JLabel(StateManager.currentMoviePoster.title + " (" + StateManager.currentMoviePoster.year.substring(0, 4) + ")");
         title.setForeground(Color.BLACK);
@@ -116,19 +125,24 @@ public class Poster extends CriticPage implements ActionListener {
 
 
         //salamat chatgpt
-        bg = new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.backdropPath) {
-            @Override
-            protected void paintComponent(Graphics g) {
-                Graphics2D g2d = (Graphics2D) g.create();
-                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+        if(StateManager.currentMoviePoster.backdropPath != "null"){
+            bg = new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.backdropPath) {
+                @Override
+                protected void paintComponent(Graphics g) {
+                    Graphics2D g2d = (Graphics2D) g.create();
+                    g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
 
-                Image image = ((ImageIcon) this.getIcon()).getImage();
-                Image scaledImage = image.getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH);
-                g2d.drawImage(scaledImage, 0, 0, this);
+                    Image image = ((ImageIcon) this.getIcon()).getImage();
+                    Image scaledImage = image.getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH);
+                    g2d.drawImage(scaledImage, 0, 0, this);
 
-                g2d.dispose();
-            }
-        };
+                    g2d.dispose();
+                }
+            };
+        }
+
+
+
         bg.setBounds(0, 0, window.getWidth(), window.getHeight()-220);
 
         String[] star = { "Rate", "1 - Bad", "2 - Poor", "3 - Fair", "4 - Very Good", "5 - Excellent" };

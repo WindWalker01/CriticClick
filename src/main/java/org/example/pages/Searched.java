@@ -1,7 +1,6 @@
 package org.example.pages;
 
 import org.example.CriticWindow;
-import org.example.Page;
 import org.example.components.MovieTitleHolder;
 import org.example.components.TitleBar;
 import org.example.components.TitleCard;
@@ -12,13 +11,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class More extends CriticPage {
+public class Searched extends CriticPage {
 
-    private final JComboBox<String> genreComboBox;
     private final JTextField search;
     public JScrollPane scrollPane;
     public JButton back;
@@ -29,48 +25,15 @@ public class More extends CriticPage {
 
     private ArrayList<TitleCard> titleCards = new ArrayList<>();
 
-    public More(CriticWindow window) {
+
+    public Searched(CriticWindow window) {
         this.window = window;
 
         JLabel browse = new JLabel("BROWSE BY");
         browse.setFont(new Font("Arial", Font.BOLD, 14));
 
-        MovieTitleHolder popularThisWeek = new MovieTitleHolder(MovieRequest.movieMap.get("Default"), 20, window);
+        popularThisWeek = new MovieTitleHolder(MovieRequest.movies, 20, window);
         popularThisWeek.setPreferredSize(new Dimension(1200, 2000));
-
-
-        String[] genres = {"Select Genre", "Action", "Adventure", "Drama", "Science Fiction"};
-        genreComboBox = new JComboBox<>(genres);
-        genreComboBox.setFont(new Font("Arial", Font.BOLD, 14));
-        genreComboBox.setPreferredSize(new Dimension(200, 40));
-        genreComboBox.setBounds(263, 136, 50, 25);
-        genreComboBox.setFocusable(false);
-        genreComboBox.setBackground(Color.WHITE);
-        genreComboBox.addActionListener(e -> {
-            String selectedGenre = (String) genreComboBox.getSelectedItem();
-
-
-            switch (selectedGenre) {
-                case "Select Genre":
-                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Default"));
-                    break;
-                case "Action":
-                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Action"));
-                    break;
-                case "Adventure":
-                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Adventure"));
-                    break;
-                case "Drama":
-                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Drama"));
-                    break;
-                case "Science Fiction":
-                    popularThisWeek.updateTitleCards(MovieRequest.movieMap.get("Science Fiction"));
-                    break;
-            }
-
-            System.out.println("Selected genre: " + selectedGenre);
-            repaint();
-        });
 
         JLabel findFilm = new JLabel("FIND A FILM");
         findFilm.setBounds(865, 100, 100, 100);
@@ -118,7 +81,6 @@ public class More extends CriticPage {
         JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 30, 0));
         leftPanel.setBackground(LIGHT_BEIGE);
         leftPanel.add(browse);
-        leftPanel.add(genreComboBox);
 
 
         JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 30, 0));
@@ -189,21 +151,12 @@ public class More extends CriticPage {
                 }
             }
         });
-
-//        addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                window.changePage(Page.Create);
-//            }
-//        });
-
     }
+
 
     @Override
     public void reloadPage() {
-        ArrayList<Movie> movies = MovieRequest.movies;
-        for (Movie movie : movies){
-            titleCards.add(new TitleCard(movie, window));
-        }
+        popularThisWeek.updateTitleCards(MovieRequest.searched);
     }
+
 }

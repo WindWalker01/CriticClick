@@ -23,6 +23,7 @@ public class MovieRequest {
     private static ArrayList<Movie> dramaMovies = new ArrayList<>();
     private static ArrayList<Movie> scifiMovies = new ArrayList<>();
     private static ArrayList<Movie> defaultMovies = new ArrayList<>();
+    public  static ArrayList<Movie> searched = new ArrayList<>();
 
 
     public MovieRequest() {
@@ -63,7 +64,7 @@ public class MovieRequest {
 
     }
 
-    private  ArrayList<Movie> getMoviesByName(String query){
+    public static void getMoviesByName(String query){
         try{
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://api.themoviedb.org/3/search/movie?query=" + query + "&include_adult=false&language=en-US&page=1"))
@@ -73,12 +74,11 @@ public class MovieRequest {
                     .build();
             HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
-        return parseMovies(response.body());
+         searched = parseMovies(response.body());
         }catch (Exception e){
             System.err.println("Something went wrong: API request declined or something idk");
         }
 
-        return null;
     }
 
     // Now Playing
@@ -143,7 +143,7 @@ public class MovieRequest {
     }
 
 
-    private  ArrayList<Movie> parseMovies(String json) throws JsonProcessingException {
+    private static ArrayList<Movie> parseMovies(String json) throws JsonProcessingException {
         ArrayList<Movie> movies = new ArrayList<>();
 
         ObjectMapper mapper = new ObjectMapper();
@@ -156,12 +156,12 @@ public class MovieRequest {
 
             movieObj.backdropPath =  jsonMovie.get("backdrop_path").asText();
             movieObj.id = jsonMovie.get("id").asInt();
-            movieObj.title = jsonMovie.get("original_title").asText();
-            movieObj.overview = jsonMovie.get("overview").asText();
+            movieObj.title = jsonMovie.get("original_title").asText() == "null" ? movieObj.title : jsonMovie.get("original_title").asText();
+            movieObj.overview = jsonMovie.get("overview").asText() == "null" ? movieObj.overview : jsonMovie.get("overview").asText();
             movieObj.rating = jsonMovie.get("vote_average").asInt();
-            movieObj.posterPath = jsonMovie.get("poster_path").asText();
+            movieObj.posterPath = jsonMovie.get("poster_path").asText() == "null" ? movieObj.posterPath : jsonMovie.get("poster_path").asText();
 
-            movieObj.year = jsonMovie.get("release_date").asText();
+            movieObj.year = jsonMovie.get("release_date").asText() == "" ? movieObj.year : jsonMovie.get("release_date").asText();
 
             JsonNode genres = jsonMovie.get("genre_ids");
             movieObj.genre = new int[genres.size()];
@@ -172,7 +172,6 @@ public class MovieRequest {
 
             movies.add(movieObj);
         }
-
 
         return movies;
 
