@@ -28,7 +28,7 @@ public class TitleCard extends JPanel {
         setBackground(new Color(156, 134, 134));
 
         // Adding a black border to the TitleCard
-        setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));  // 2px black border
+      //  setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));  // 2px black border
 
         addMouseListener(new MouseListener() {
             @Override
@@ -58,11 +58,11 @@ public class TitleCard extends JPanel {
         // Add poster or default image
         if (!movie.posterPath.equals("null")) {
             poster = new WebImage("https://image.tmdb.org/t/p/w154" + movie.posterPath);
-            poster.setBounds(15, 5, 150, 231); // Adjusted bounds to fit panel
+            poster.setBounds(13, 5, 150, 231); // Adjusted bounds to fit panel
             add(poster);
         } else {
             JLabel defaultImage = new JLabel(new ImageIcon("src/main/resources/defaultPoster-small.png"));
-            defaultImage.setBounds(15, 5, 150, 231);
+            defaultImage.setBounds(13, 5, 150, 231);
             add(defaultImage);
         }
 
@@ -124,8 +124,15 @@ public class TitleCard extends JPanel {
         // Increase the offset to make the shadow more visible
         g2d.fillRoundRect(10, 10, getWidth() - 20, getHeight() - 20, 15, 15);  // Shadow with more offset
 
-        // Create the main panel after shadow is drawn (still with rounded corners)
+        // Create the main panel with rounded corners
         g2d.setColor(getBackground());
-        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);  // Main panel
+        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);  // Main panel with rounded corners
+
+        // If you want to add a border with rounded corners
+        g2d.setColor(CriticPage.LIGHT_BEIGE);
+        g2d.setStroke(new BasicStroke(4));  // Set border thickness
+        g2d.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 20, 20);  // Border with rounded corners
     }
+
+
 }

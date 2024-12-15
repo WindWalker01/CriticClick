@@ -3,14 +3,12 @@ import org.example.CriticWindow;
 import org.example.Page;
 import org.example.components.TitleBar;
 import org.example.components.primitives.WebImage;
+import org.example.data.MovieRequest;
 import org.example.data.StateManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
+import java.awt.event.*;
 
 public class Poster extends CriticPage implements ActionListener {
      JPanel desc;
@@ -59,7 +57,7 @@ public class Poster extends CriticPage implements ActionListener {
             poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
         }
 
-        poster.setBounds(80, 100, 220,350);
+        poster.setBounds(100, 100, 220,350);
 
 
         title = new JLabel(StateManager.currentMoviePoster.title + " (" + StateManager.currentMoviePoster.year.substring(0, 4) + ")");
@@ -117,6 +115,22 @@ public class Poster extends CriticPage implements ActionListener {
         searchTf.setEditable(true);
         searchTf.setBounds(600,20,200, 25);
         searchTf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        searchTf.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                searchTf.selectAll();
+            }
+        });
+        searchTf.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!searchTf.getText().equals("")) {
+                    MovieRequest.getMoviesByName(searchTf.getText());
+                    window.changePage(Page.Search);
+
+                }
+            }
+        });
 
         search = new JLabel("Search");
         search.setForeground(Color.WHITE);
