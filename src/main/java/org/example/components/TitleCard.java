@@ -5,11 +5,10 @@ import org.example.Page;
 import org.example.components.primitives.WebImage;
 import org.example.data.Movie;
 import org.example.data.StateManager;
+import org.example.pages.CriticPage;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -25,8 +24,11 @@ public class TitleCard extends JPanel {
         this.window = window;
         movieData = movie;
         setLayout(null);
-        setSize(154,265);
-        setBackground(CriticWindow.LIGHT_BEIGE);
+        setSize(160, 60);
+        setBackground(new Color(156, 134, 134));
+
+        // Adding a black border to the TitleCard
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));  // 2px black border
 
         addMouseListener(new MouseListener() {
             @Override
@@ -37,12 +39,10 @@ public class TitleCard extends JPanel {
 
             @Override
             public void mousePressed(MouseEvent e) {
-
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-
             }
 
             @Override
@@ -52,31 +52,80 @@ public class TitleCard extends JPanel {
 
             @Override
             public void mouseExited(MouseEvent e) {
-
             }
-
         });
 
-        if(movie.posterPath != "null"){
+        // Add poster or default image
+        if (!movie.posterPath.equals("null")) {
             poster = new WebImage("https://image.tmdb.org/t/p/w154" + movie.posterPath);
-            poster.setBounds(5, 5, 154, 231);
+            poster.setBounds(15, 5, 150, 231); // Adjusted bounds to fit panel
             add(poster);
-        }else{
+        } else {
             JLabel defaultImage = new JLabel(new ImageIcon("src/main/resources/defaultPoster-small.png"));
-            defaultImage.setBounds(5, 5, 154, 231);
+            defaultImage.setBounds(15, 5, 150, 231);
             add(defaultImage);
         }
 
-        title = new JLabel(movie.title);
-        title.setBounds(5 ,236, getWidth(), 16);
+        // Title Panel setup
+        JPanel titlePanel = new JPanel();
+        titlePanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        titlePanel.setBounds(5, 205, getWidth() - 10, 50); // Adjusted height for title panel
+        titlePanel.setOpaque(false);
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;  // Allow the label to take the full width of the panel
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        // Create the title label with HTML to allow word wrapping and centering
+        title = new JLabel("<html><div style='text-align: center; word-wrap: break-word;'>" + movie.title + "</div></html>");
+        title.setFont(new Font("Arial", Font.BOLD, 14));
         title.setHorizontalAlignment(SwingConstants.CENTER);
-        title.setHorizontalTextPosition(SwingConstants.CENTER);
+        title.setVerticalAlignment(SwingConstants.CENTER);
 
-        year = new JLabel(movie.year.substring(0, 4));
-        year.setBounds(5 ,252, getWidth(), 16);
+        titlePanel.add(title, gbc);
+
+        // Year Panel setup
+        JPanel yearPanel = new JPanel();
+        yearPanel.setLayout(new BorderLayout());
+        yearPanel.setBackground(Color.LIGHT_GRAY);
+        yearPanel.setBounds(5, 310, getWidth() - 10, 30);
+        yearPanel.setOpaque(false); // Adjusted height for year panel
+
+        year = new JLabel(movie.year.substring(0, 4), SwingConstants.CENTER);
+        year.setFont(new Font("Arial", Font.ITALIC, 12));
         year.setHorizontalAlignment(SwingConstants.CENTER);
+        yearPanel.add(year, BorderLayout.CENTER);
 
-        add(title);
-        add(year);
+        // Center alignment of panels
+        JPanel centeredPanels = new JPanel();
+        centeredPanels.setLayout(new BoxLayout(centeredPanels, BoxLayout.Y_AXIS));
+        centeredPanels.setOpaque(false); // Transparent background
+        centeredPanels.setBounds(15, 235, getWidth() - 10, 80); // Adjust bounds to fit panels
+        centeredPanels.add(titlePanel);
+        centeredPanels.add(yearPanel);
+        add(centeredPanels);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        // Cast to Graphics2D for more advanced drawing
+        Graphics2D g2d = (Graphics2D) g;
+
+        // Enable anti-aliasing for smoother drawing
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        // Set the shadow color to black with higher opacity (alpha value 150)
+        g2d.setColor(new Color(0, 0, 0, 150));  // More opaque shadow
+
+        // Increase the offset to make the shadow more visible
+        g2d.fillRoundRect(10, 10, getWidth() - 20, getHeight() - 20, 15, 15);  // Shadow with more offset
+
+        // Create the main panel after shadow is drawn (still with rounded corners)
+        g2d.setColor(getBackground());
+        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);  // Main panel
     }
 }

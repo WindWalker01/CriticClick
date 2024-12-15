@@ -51,15 +51,15 @@ public class Poster extends CriticPage implements ActionListener {
         if(StateManager.currentMoviePoster.posterPath != "null"){
             WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.posterPath);
             ImageIcon originalIcon = (ImageIcon) webImage.getIcon();
-            Image resizedImage = originalIcon.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
+            Image resizedImage = originalIcon.getImage().getScaledInstance(220, 350, Image.SCALE_SMOOTH);
             poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
         }else {
             ImageIcon image = new ImageIcon("src/main/resources/defaultPoster-big.png");
-            Image resizedImage = image.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
+            Image resizedImage = image.getImage().getScaledInstance(220, 350, Image.SCALE_SMOOTH);
             poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
         }
 
-        poster.setBounds(100, 150, 170,250);
+        poster.setBounds(80, 100, 220,350);
 
 
         title = new JLabel(StateManager.currentMoviePoster.title + " (" + StateManager.currentMoviePoster.year.substring(0, 4) + ")");

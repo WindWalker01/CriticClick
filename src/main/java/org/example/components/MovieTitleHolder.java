@@ -20,7 +20,7 @@ public class MovieTitleHolder extends JPanel {
 
         for (int j = 0; j < limit; j++) {
             TitleCard titleCard = new TitleCard(movies.get(j),window );
-            titleCard.setPreferredSize(new Dimension(150, 300));
+            titleCard.setPreferredSize(new Dimension(180, 320));
             add(titleCard);
             setBackground(CriticPage.LIGHT_BEIGE);
         }
@@ -32,7 +32,7 @@ public class MovieTitleHolder extends JPanel {
 
         for (Movie movie : movies) {
             TitleCard titleCard = new TitleCard(movie, window);
-            titleCard.setPreferredSize(new Dimension(150, 300));
+            titleCard.setPreferredSize(new Dimension(180, 320));
             add(titleCard);
             setBackground(CriticPage.LIGHT_BEIGE);
         }
