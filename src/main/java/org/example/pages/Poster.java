@@ -141,7 +141,7 @@ public class Poster extends CriticPage implements ActionListener {
         searchTf.setForeground(Color.BLACK);
         searchTf.setFont(new Font("Arial", Font.PLAIN, 18));
         searchTf.setEditable(true);
-        searchTf.setBounds(600,20,200, 25);
+        searchTf.setBounds(600,20,200, 30);
         searchTf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         searchTf.addFocusListener(new FocusAdapter() {
             @Override
@@ -162,11 +162,10 @@ public class Poster extends CriticPage implements ActionListener {
 
         search = new JLabel("Search");
         search.setForeground(Color.WHITE);
-        search.setFont(new Font("Arial", Font.BOLD, 12));
+        search.setFont(new Font("Arial", Font.BOLD, 13));
         search.setBounds(550,18,100, 30);
 
 
-        //salamat chatgpt
         if(StateManager.currentMoviePoster.backdropPath != "null"){
             bg = new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.backdropPath) {
                 @Override
@@ -211,9 +210,7 @@ public class Poster extends CriticPage implements ActionListener {
             }
         }
 
-
         add(starRate);
-
         add(message);
         add(back);
         add(submit);

@@ -6,7 +6,7 @@ import org.example.components.MovieTitleHolder;
 import org.example.components.TitleBar;
 import org.example.data.MovieRequest;
 import org.example.data.StateManager;
-
+import javax.swing.plaf.basic.BasicScrollBarUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -127,6 +127,27 @@ public class Home extends CriticPage {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBorder(null);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);  // to make scroll faster
+
+        scrollPane.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = new Color(0x756565); // Scrollbar thumb color
+                this.trackColor = new Color(0xD0D0D0); // Track color (background of the scrollbar)
+            }
+
+            @Override
+            protected void paintThumb(Graphics g, JComponent c, Rectangle r) {
+                g.setColor(new Color(0x756565));  // Thumb color
+                g.fillRoundRect(r.x, r.y, r.width, r.height, 10, 10);  // Rounded corners for thumb
+            }
+
+            @Override
+            protected void paintTrack(Graphics g, JComponent c, Rectangle r) {
+                g.setColor(new Color(0xD0D0D0));  // Track color
+                g.fillRoundRect(r.x, r.y, r.width, r.height, 10, 10);  // Rounded corners for track
+            }
+        });
+
 
         add(new TitleBar(window));
         add(scrollPane);

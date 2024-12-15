@@ -29,36 +29,6 @@ public class UserData {
        return -1;
     }
 
-    public static void main(String[] args) {
-//        // Sample data
-//        List<User> users = new ArrayList<>();
-//        users.add(new User("john_doe", "password123", List.of(
-//                new Movie("Inception", 1, "Amazing sci-fi movie!", 9),
-//                new Movie("Titanic", 2, null, 8)
-//        )));
-//        users.add(new User("jane_doe", "securePassword", List.of(
-//                new Movie("The Matrix", 3, "A genre-defining classic", 10)
-//        )));
-//
-//        // Write users to JSON file
-//        saveUsersToJson(users);
-//
-//        // Load users from JSON file
-//        List<User> loadedUsers = loadUsersFromJson();
-//
-//        // Add movies to an existing user
-//        addMoviesToUser(loadedUsers, "john_doe", List.of(
-//                new Movie("Avatar", 4, "Visually stunning!", 9),
-//                new Movie("Interstellar", 5, "Mind-bending sci-fi", 10)
-//        ));
-//
-//        // Save updated users to JSON file
-//        saveUsersToJson(loadedUsers);
-//
-//        // Print updated JSON data
-//        System.out.println("Updated User Data:");
-//        System.out.println(convertToJson(loadedUsers));
-    }
 
     // Method to save users to an external JSON file
     public static void saveUsersToJson(List<User> users) {

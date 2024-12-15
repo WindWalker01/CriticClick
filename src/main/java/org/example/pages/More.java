@@ -1,5 +1,4 @@
 package org.example.pages;
-
 import org.example.CriticWindow;
 import org.example.Page;
 import org.example.components.MovieTitleHolder;
@@ -7,14 +6,13 @@ import org.example.components.TitleBar;
 import org.example.components.TitleCard;
 import org.example.data.Movie;
 import org.example.data.MovieRequest;
-
+import javax.swing.border.LineBorder;
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicScrollBarUI;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-
 public class More extends CriticPage {
-
     private final JComboBox<String> genreComboBox;
     private final JTextField search;
     public JScrollPane scrollPane;
@@ -42,10 +40,10 @@ public class More extends CriticPage {
         genreComboBox.setPreferredSize(new Dimension(200, 40));
         genreComboBox.setBounds(263, 136, 50, 25);
         genreComboBox.setFocusable(false);
-        genreComboBox.setBackground(Color.WHITE);
+       // genreComboBox.setBackground(Color.WHITE);
+        genreComboBox.setBorder(new LineBorder(new Color(0x756565), 2));
         genreComboBox.addActionListener(e -> {
             String selectedGenre = (String) genreComboBox.getSelectedItem();
-
 
             switch (selectedGenre) {
                 case "Select Genre":
@@ -76,9 +74,10 @@ public class More extends CriticPage {
         search = new JTextField("Search");
         search.setBounds(933, 136, 150, 55);
         search.setPreferredSize(new Dimension(200, 40));
-        search.setFont(new Font("Arial", Font.BOLD, 10));
+        search.setFont(new Font("Arial", Font.BOLD, 13));
         search.setEditable(true);
         search.setBackground(Color.WHITE);
+        search.setBorder(new LineBorder(new Color(0x756565), 2));
         search.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -96,13 +95,9 @@ public class More extends CriticPage {
             }
         });
 
-
         JLabel popularFilms = new JLabel("FILMS");
         popularFilms.setBounds(50, 0, 300, 100);
         popularFilms.setFont(new Font("Arial", Font.BOLD, 15));
-
-
-
 
         //spacer
         JPanel spacerUp = new JPanel();
@@ -177,6 +172,25 @@ public class More extends CriticPage {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBorder(null);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);  // to make scroll faster
+        scrollPane.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = new Color(0x756565); // Scrollbar thumb color
+                this.trackColor = new Color(0xD0D0D0); // Track color (background of the scrollbar)
+            }
+
+            @Override
+            protected void paintThumb(Graphics g, JComponent c, Rectangle r) {
+                g.setColor(new Color(0x756565));  // Thumb color
+                g.fillRoundRect(r.x, r.y, r.width, r.height, 10, 10);  // Rounded corners for thumb
+            }
+
+            @Override
+            protected void paintTrack(Graphics g, JComponent c, Rectangle r) {
+                g.setColor(new Color(0xD0D0D0));  // Track color
+                g.fillRoundRect(r.x, r.y, r.width, r.height, 10, 10);  // Rounded corners for track
+            }
+        });
 
         add(new TitleBar(window));
         add(scrollPane);
@@ -197,13 +211,6 @@ public class More extends CriticPage {
             }
         });
 
-//        addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                window.changePage(Page.Create);
-//            }
-//        });
-
     }
 
     @Override
@@ -214,3 +221,4 @@ public class More extends CriticPage {
         }
     }
 }
+

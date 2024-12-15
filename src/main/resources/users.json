@@ -1,4 +1,25 @@
-[ {
+[ null, null, null, null, null, null, null, {
+  "username" : "unil",
+  "password" : "123",
+  "movies" : [ ]
+}, null, null, null, {
+  "username" : "unil",
+  "password" : "123",
+  "movies" : [ {
+    "title" : "Red One",
+    "id" : 845781,
+    "comments" : "wa",
+    "rating" : 0
+  } ]
+}, {
+  "username" : "unil",
+  "password" : "123",
+  "movies" : [ ]
+}, null, null, {
+  "username" : "unil",
+  "password" : "123",
+  "movies" : [ ]
+}, null, null, null, {
   "username" : "ruzzel",
   "password" : "1234",
   "movies" : [ {
