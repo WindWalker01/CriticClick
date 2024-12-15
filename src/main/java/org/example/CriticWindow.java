@@ -1,14 +1,14 @@
 package org.example;
 
 import org.example.dsa.HashMapngGroup1;
-import org.example.pages.Create;
-import org.example.pages.CriticPage;
-import org.example.pages.Home;
+import org.example.pages.*;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class CriticWindow extends JFrame {
 
+    public static final Color LIGHT_BEIGE = new Color(229, 225, 218)  ;
     private final int WINDOW_WIDTH = 1280;
     private final int WINDOW_HEIGHT = 720;
 
@@ -16,6 +16,9 @@ public class CriticWindow extends JFrame {
 
 
     public CriticWindow(){
+        addPage(Page.Loading, new Loading(this));
+        changePage(Page.Loading);
+
         setLayout(null);
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setLocationRelativeTo(null);
@@ -26,10 +29,14 @@ public class CriticWindow extends JFrame {
 
         addPage(Page.Home, new Home(this));
         addPage(Page.Create, new Create(this));
-
-        changePage(Page.Home);
-
-
+        addPage(Page.MainPage, new MainPage(this));
+        addPage(Page.Profile, new Profile(this));
+        addPage(Page.More, new More(this));
+        addPage(Page.Login, new Login(this));
+        addPage(Page.Poster, new Poster(this));
+        addPage(Page.Search, new Searched(this));
+      
+        changePage(Page.MainPage);
 
     }
 
@@ -40,16 +47,18 @@ public class CriticWindow extends JFrame {
         add(panel);
     }
 
-
-
-    public void changePage(Page desiredPage){
+    public CriticPage changePage(Page desiredPage){
+        CriticPage page = null;
         for (HashMapngGroup1.Node<Page, CriticPage> set : pages.entrySet()){
             if(set.key == desiredPage){
+                set.value.reloadPage();
                 set.value.setVisible(true);
-                System.out.println("hello");
+                page = set.value;
             }else{
                 set.value.setVisible(false);
             }
         }
+
+        return page;
     }
 }

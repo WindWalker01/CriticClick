@@ -1,0 +1,49 @@
+[ {
+  "username" : "ruzzel",
+  "password" : "1234",
+  "movies" : [ {
+    "title" : "Elevation",
+    "id" : 1035048,
+    "comments" : "asdasd",
+    "rating" : 3
+  }, {
+    "title" : "Moana 2",
+    "id" : 1241982,
+    "comments" : "asdasd",
+    "rating" : 4
+  }, {
+    "title" : "Face",
+    "id" : 26124,
+    "comments" : "asdasd",
+    "rating" : 3
+  }, {
+    "title" : "The Wild Robot",
+    "id" : 1184918,
+    "comments" : "asdasdasd",
+    "rating" : 3
+  }, {
+    "title" : "Elevation",
+    "id" : 1035048,
+    "comments" : "ashdjashjdashj",
+    "rating" : 3
+  }, {
+    "title" : "Elevation",
+    "id" : 1035048,
+    "comments" : "ashdjashjdashj",
+    "rating" : 5
+  }, {
+    "title" : "Elevation",
+    "id" : 1035048,
+    "comments" : "Ruzzel was heere",
+    "rating" : 5
+  } ]
+}, {
+  "username" : "godson",
+  "password" : "1234",
+  "movies" : [ {
+    "title" : "Venom: The Last Dance",
+    "id" : 912649,
+    "comments" : "godson",
+    "rating" : 5
+  } ]
+} ]
