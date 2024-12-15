@@ -157,6 +157,18 @@ public class Home extends CriticPage {
             }
         });
 
+        moreFilms.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                window.changePage(Page.More);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                moreFilms.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+        });
+
         //eto yung nakakagulo pala
 //        addMouseListener(new MouseAdapter() {
 //            @Override
