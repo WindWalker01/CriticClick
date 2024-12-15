@@ -5,6 +5,7 @@ import org.example.components.TitleBar;
 import org.example.components.primitives.WebImage;
 import org.example.data.MovieRequest;
 import org.example.data.StateManager;
+import org.example.data.UserData;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,6 +21,8 @@ public class Poster extends CriticPage implements ActionListener {
      JComboBox <String> starRate;
      private CriticWindow window;
 
+     private String currentRating = "0";
+
     public Poster(CriticWindow window) {
         this.window = window;
     }
@@ -28,6 +31,18 @@ public class Poster extends CriticPage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == back) {
             window.changePage(Page.Home);
+        }
+
+        if(e.getSource() == submit){
+            int rating = Integer.parseInt(String.valueOf(currentRating.charAt(0)));
+            UserData.addMoviesToUser
+                (UserData.currentUser,
+                new UserData.MovieExternalData(
+                    StateManager.currentMoviePoster.title,
+                    StateManager.currentMoviePoster.id,
+                    message.getText(),
+                    rating)
+                );
         }
     }
 
@@ -169,13 +184,19 @@ public class Poster extends CriticPage implements ActionListener {
         starRate.setFocusable(false);
         starRate.setBackground(Color.WHITE);
         starRate.addActionListener(e -> {
-            String selectedGenre = (String) starRate.getSelectedItem();
-            System.out.println("Selected genre: " + selectedGenre);
+            currentRating = (String) starRate.getSelectedItem();
         });
         starRate.setBackground(CriticWindow.LIGHT_BEIGE);
         starRate.setFont(new Font("Arial", Font.BOLD, 14));
         starRate.setFocusable(false);
 
+
+        for (UserData.MovieExternalData data : UserData.currentUser.getMovies()){
+            if(data.getTitle().equals(StateManager.currentMoviePoster.title)){
+                message.setText(data.getComments());
+                starRate.setSelectedIndex(data.getRating());
+            }
+        }
 
 
         add(starRate);
@@ -197,7 +218,6 @@ public class Poster extends CriticPage implements ActionListener {
         add(bg);
 
     }
-
 
 
 }

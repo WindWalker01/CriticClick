@@ -1,10 +1,13 @@
 package org.example.pages;
 import org.example.CriticWindow;
 import org.example.Page;
+import org.example.data.UserData;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Create extends CriticPage implements ActionListener {
     private JLabel banner;
@@ -148,6 +151,8 @@ public class Create extends CriticPage implements ActionListener {
             if (email.isEmpty() || password.isEmpty() || email.equals(" Enter your email") || password.equals(" Enter your password")) {
 
             } else {
+                UserData.allUsers.add(new UserData.User(email, password, new ArrayList<UserData.MovieExternalData>()));
+                UserData.setUpCurrentUser(email, password);
                 window.changePage(Page.Loading);
             }
         }

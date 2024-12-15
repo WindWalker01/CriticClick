@@ -2,6 +2,7 @@ package org.example.pages;
 
 import org.example.CriticWindow;
 import org.example.Page;
+import org.example.data.UserData;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -138,7 +139,9 @@ public class Login extends CriticPage implements ActionListener {
             if (email.isEmpty() || password.isEmpty() || email.equals("Enter your email") || password.equals("Enter your password")) {
 
             } else {
-               window.changePage(Page.Loading);
+                if(UserData.setUpCurrentUser(email, password) == 0){
+                    window.changePage(Page.Loading);
+                }
             }
         }
     }

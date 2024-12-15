@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1ddfda8-af15-4c52-8511-88ac18bca519" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/data/UserData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CriticWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/More.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/More.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/components/ProfileBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/components/ProfileBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Create.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Poster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Poster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Searched.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Searched.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/defaultBackdrop.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/defaultBackdrop.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/Profile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +49,9 @@
     &quot;accountId&quot;: &quot;e04b7f95-aaa1-41ca-b80e-74bf6dcf5414&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/pages/Poster.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -68,7 +75,7 @@
     "Application.Main.executor": "Run",
     "Application.Test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ruzzel",
+    "git-widget-placeholder": "stateManager",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -141,6 +148,7 @@
       <workItem from="1733987882567" duration="321000" />
       <workItem from="1734196372269" duration="123000" />
       <workItem from="1734232062730" duration="18684000" />
+      <workItem from="1734267513990" duration="6620000" />
     </task>
     <servers />
   </component>
@@ -190,6 +198,36 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/data/MovieRequest.java</url>
           <line>175</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/data/UserData.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/data/UserData.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/data/UserData.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/data/UserData.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/data/UserData.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/data/UserData.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
