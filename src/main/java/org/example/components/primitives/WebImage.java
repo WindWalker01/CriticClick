@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class WebImage extends JLabel {
+public class    WebImage extends JLabel {
 
     public String url;
     private ImageIcon icon;

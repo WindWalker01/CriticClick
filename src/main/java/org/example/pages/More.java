@@ -152,9 +152,9 @@ public class More extends CriticPage {
         back.setFocusable(false);
 
         JPanel poster = new JPanel();
-        poster.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        poster.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
         poster.setBackground(LIGHT_BEIGE);
-        poster.setPreferredSize(new Dimension(1200, 1500));
+        poster.setPreferredSize(new Dimension(1200, 1900));
 
         // lowest
         JPanel lowest = new JPanel();

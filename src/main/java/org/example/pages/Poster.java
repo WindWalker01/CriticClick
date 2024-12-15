@@ -3,15 +3,13 @@ import org.example.CriticWindow;
 import org.example.Page;
 import org.example.components.TitleBar;
 import org.example.components.primitives.WebImage;
+import org.example.data.MovieRequest;
 import org.example.data.StateManager;
 import org.example.data.UserData;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
+import java.awt.event.*;
 
 public class Poster extends CriticPage implements ActionListener {
      JPanel desc;
@@ -66,15 +64,15 @@ public class Poster extends CriticPage implements ActionListener {
         if(StateManager.currentMoviePoster.posterPath != "null"){
             WebImage webImage =  new WebImage("https://image.tmdb.org/t/p/w342" + StateManager.currentMoviePoster.posterPath);
             ImageIcon originalIcon = (ImageIcon) webImage.getIcon();
-            Image resizedImage = originalIcon.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
+            Image resizedImage = originalIcon.getImage().getScaledInstance(220, 350, Image.SCALE_SMOOTH);
             poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
         }else {
             ImageIcon image = new ImageIcon("src/main/resources/defaultPoster-big.png");
-            Image resizedImage = image.getImage().getScaledInstance(170, 250, Image.SCALE_SMOOTH);
+            Image resizedImage = image.getImage().getScaledInstance(220, 350, Image.SCALE_SMOOTH);
             poster = new JLabel(new ImageIcon(resizedImage)); // Create a new JLabel with the resized image
         }
 
-        poster.setBounds(100, 150, 170,250);
+        poster.setBounds(100, 100, 220,350);
 
 
         title = new JLabel(StateManager.currentMoviePoster.title + " (" + StateManager.currentMoviePoster.year.substring(0, 4) + ")");
@@ -132,6 +130,22 @@ public class Poster extends CriticPage implements ActionListener {
         searchTf.setEditable(true);
         searchTf.setBounds(600,20,200, 25);
         searchTf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        searchTf.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                searchTf.selectAll();
+            }
+        });
+        searchTf.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!searchTf.getText().equals("")) {
+                    MovieRequest.getMoviesByName(searchTf.getText());
+                    window.changePage(Page.Search);
+
+                }
+            }
+        });
 
         search = new JLabel("Search");
         search.setForeground(Color.WHITE);
