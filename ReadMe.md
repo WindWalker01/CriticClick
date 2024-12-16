@@ -5,8 +5,7 @@ The `HashMapngGroup1<K, V>` class represents a hash map, which is a collection o
 
 1. **Insert (Set)**: Add a key-value pair to the map. If a key already exists, it appends the new value at the collision point (in this case, as part of a linked list).
 2. **Retrieve (Get)**: Retrieve the value associated with a specific key.
-3. **Delete** (not implemented in this class): The removal of a specific key-value pair.
-4. **Utility Operations**:
+3. **Utility Operations**:
     - `keys()`: Retrieve a list of all keys.
     - `values()`: Retrieve a list of all values.
     - `entrySet()`: Retrieve all key-value pairs as a set.
