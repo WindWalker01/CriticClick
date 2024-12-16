@@ -18,16 +18,31 @@ public class UserData {
     public static User currentUser = null;
 
     public static int setUpCurrentUser(String username, String password) {
-       for (User user : allUsers) {
-           if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-               currentUser = user;
-               allUsers.remove(user);
-               return 0;
-           }
-       }
+        if (allUsers == null) {
+            allUsers = new ArrayList<>();
+        }
 
-       return -1;
+        if (allUsers.isEmpty()) {
+            System.out.println("No users available in the system.");
+            return -1;
+        }
+
+        User matchedUser = null;
+        for (User user : allUsers) {
+            if (user != null && user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                matchedUser = user;
+                break;
+            }
+        }
+        if (matchedUser == null) {
+            System.out.println("User not found with the provided username and password.");
+            return -1;
+        }
+        currentUser = matchedUser;
+        allUsers.remove(matchedUser);
+        return 0;
     }
+
 
 
     // Method to save users to an external JSON file
