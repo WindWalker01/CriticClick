@@ -139,8 +139,3 @@ public Set<Node<K, V>> entrySet(){
 }
 ```
 
----
-
-## Summary
-This implementation of a hash map is a basic demonstration of the **Modulo Division Method** for hashing and **separate chaining** for collision resolution. While functional, it lacks features like dynamic resizing, handling of duplicate keys, or advanced hashing strategies. However, it successfully adheres to the fundamental principles of the hash map ADT and provides an excellent learning base for custom hash map implementations.
-
