@@ -1,4 +1,4 @@
-# Script: ADT Specification, Representation, and Implementation
+# ADT Specification, Representation, and Implementation
 
 ## Abstract Data Type (ADT) Specification
 The `HashMapngGroup1<K, V>` class represents a hash map, which is a collection of key-value pairs where each key is unique. The primary operations supported by this hash map include:
